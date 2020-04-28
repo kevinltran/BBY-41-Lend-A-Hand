@@ -1,3 +1,11 @@
+ //The core Firebase JS SDK is always required and must be listed first
+//firebase stuff
+/* <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" /> */
+/* <script>
 var provider = new firebase.auth.FacebookAuthProvider();
 
 function facebookSignin() {
@@ -24,3 +32,4 @@ function facebookSignout() {
       console.log('Signout failed')
    });
 }
+</script> */
