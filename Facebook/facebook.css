@@ -1,0 +1,8 @@
+#FBSignIn{
+  background-color: blue;
+}
+#FBSignOut{
+  background-color: red;
+  border: 5px solid black;
+  float: right;
+}

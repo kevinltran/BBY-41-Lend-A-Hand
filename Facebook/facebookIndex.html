@@ -16,11 +16,21 @@
    <!--------------------------------------------------------------------->
    <script src="facebook.js"></script>
    <script src="firebase.js"></script>
+   <script src="facebook.css"></script>
 
 </head>
 <body>
-   <button onclick = "facebookSignin()">Facebook Signin</button>
-   <button onclick = "facebookSignout()">Facebook Signout</button>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.14.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+   <button id="FBSignIn" onclick = "facebookSignin()">Facebook Signin</button>
+   <button id="FBSignOut" onclick = "facebookSignout()">Facebook Signout</button>
 
    <script>
 
@@ -83,6 +93,7 @@ function facebookSignout() {
 }
 
     </script>
+
 
 </body>
 </html>
