@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Authentication</title>
+</head>
+<body>
+  <button onclick = "facebookSignin()">Facebook Signin</button>
+<button onclick = "facebookSignout()">Facebook Signout</button>
+
+  <script>
+  window.fbAsyncInit = function() {
+     FB.init ({
+        appId      : 'Lend A Hand',
+        xfbml      : true,
+        version    : 'v2.6'
+     });
+  };
+
+  (function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+  } (document, 'script', 'facebook-jssdk'));
+
+</script>
+
+</body>
+</html>
