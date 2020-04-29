@@ -1,106 +1,105 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>lend a hand login</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
 
+   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+   <script src="js/firebase_api_29.js"></script>
 
-  <!-- Bootstrap for Mobile-first -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <!--------------------------------------------------------------------->
+   <!-- JS files: Your own JavaScript functions included here    -->
+   <!--------------------------------------------------------------------->
+   <script src="facebook.js"></script>
+   <script src="firebase.js"></script>
+   <link rel="stylesheet" href="/css/FBLogin.css">
 
-  <!-- Optional styles and scripts of your own -->
-  <link rel="stylesheet" href="styles/FBLogin.css">
+</head>
+<body>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.14.2/firebase-app.js"></script>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-      https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
 
-  <!-- The Firebase Authentication UI Library -->
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
-
-  <!-- This is the configuration that connects my web files to my firebase project -->
-  <script src="scripts/firebase.js"></script>
-  <script src="facebook.js"></script>
-  <link rel="stylesheet" href="/styles/FBLogin.css">
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
 
-</head>
 
-<body>
+   <script>
 
-  <!-------------------------------------->
-  <!-- The following is HTML for layout -->
-  <!-------------------------------------->
-  <button id="btn1"  class="fa fa-facebook" onclick = "facebookSignin()">  <br> SIGN IN</button>
-  <button id="btn2"  class="fa fa-facebook" onclick = "facebookSignout()">  <br> SIGN OUT</button>
-  <!-- Where the common header navigation bar goes -->
-  <OBJECT width=100% data="common_header.html">
-    Warning: common_header.html could not be included.
-  </OBJECT>
+var firebaseConfig = {
+    apiKey: "AIzaSyAdQNsdN8jh2Tv1Ot0ADsbRqbzlUMYQXEU",
+    authDomain: "lend-a-hand-9861e.firebaseapp.com",
+    databaseURL: "https://lend-a-hand-9861e.firebaseio.com/",
+    projectId: "lend-a-hand-9861e",
+    storageBucket: "lend-a-hand-9861e.appspot.com",
+    messagingSenderId: "230477140946",
+    appId: "1:230477140946:web:f1c6cb4bb6ea0533416e0b"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
 
-  <!-- where the login container will be inserted -->
-  <h1 id="firebaseui-auth-container"></h1>
 
-  <script src="scripts/createAccount.js"></script>
 
-  <!--------------------------------------------------------------------------------------------->
-  <!-- The following javascript chunk is cop>ied from Firebase Authentication UI documentation -->
-  <!--------------------------------------------------------------------------------------------->
-  <script>
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      window.fbAsyncInit = function() {
+         FB.init ({
+            appId      : '1073205286398589',
+            xfbml      : true,
+            version    : 'v2.6'
+         });
+      };
 
-    var uiConfig = {
-      callbacks: {
-        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-          // User successfully signed in.
-          // Return type determines whether we continue the redirect automatically
-          // or whether we leave that to developer to handle.
-          return true;
-        },
-        uiShown: function () {
-          // The widget is rendered.
-          // Hide the loader.
-          document.getElementById('loader').style.display = 'none';
-        }
-      },
-      // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-      signInFlow: 'popup',
-      signInSuccessUrl: 'main.html',
-      signInOptions: [
-        // Leave the lines as is for the providers you want to offer your users.
-        //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-        //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-        //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-      ],
-      // Terms of service url.
-      tosUrl: 'main.html',
-      // Privacy policy url.
-      privacyPolicyUrl: 'main.html',
-      accountChooserEnabled: false
-    };
+      (function(d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+      } (document, 'script', 'facebook-jssdk'));
 
-    // The start method will wait until the DOM is loaded.
-    // Inject the login interface into the HTML
-    ui.start('#firebaseui-auth-container', uiConfig);
-  </script>
-  <!---------------------------------------------------------------------------------------------->
-  <!-- End of javascript for Firebase Authentication UI                                         -->
-  <!---------------------------------------------------------------------------------------------->
+      var provider = new firebase.auth.FacebookAuthProvider();
+
+function facebookSignin() {
+   firebase.auth().signInWithPopup(provider)
+
+   .then(function(result) {
+      var token = result.credential.accessToken;
+      var user = result.user;
+
+      console.log(token)
+      console.log(user)
+   }).catch(function(error) {
+      console.log(error.code);
+      console.log(error.message);
+   });
+}
+
+function facebookSignout() {
+   firebase.auth().signOut()
+
+   .then(function() {
+      console.log('Signout successful!')
+   }, function(error) {
+      console.log('Signout failed')
+   });
+}
+
+
+
+    </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<button id="btn1"  class="fa fa-facebook" onclick = "facebookSignin()">  <br> SIGN IN</button>
+<button id="btn2"  class="fa fa-facebook" onclick = "facebookSignout()">  <br> SIGN OUT</button>
+
 
 </body>
-
 </html>
+
+
