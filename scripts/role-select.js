@@ -6,7 +6,7 @@ function selectHelper(){
 
 function selectHelpee(){
     document.getElementById("helpee-block").addEventListener("click", function(e){
-        window.location.href = "confrimHelpee.html"
+        window.location.href = "confirmHelpee.html"
     })
 }
 

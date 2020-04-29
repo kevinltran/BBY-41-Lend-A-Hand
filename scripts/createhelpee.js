@@ -17,7 +17,7 @@ document.getElementById("clicked").onclick = function () {
 };
 
 function write(fullName, emailAddress, phoneNumber, homeAddress){
-    db.collection("helper").add({
+    db.collection("helpee").add({
         address: homeAddress,
         email: emailAddress,
         name: fullName,
