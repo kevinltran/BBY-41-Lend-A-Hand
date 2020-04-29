@@ -16,7 +16,7 @@
    <!--------------------------------------------------------------------->
    <script src="facebook.js"></script>
    <script src="firebase.js"></script>
-   <script src="facebook.css"></script>
+   <link rel="stylesheet" href="facebook.css">
 
 </head>
 <body>
@@ -29,8 +29,8 @@
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
 
-   <button id="FBSignIn" onclick = "facebookSignin()">Facebook Signin</button>
-   <button id="FBSignOut" onclick = "facebookSignout()">Facebook Signout</button>
+   <!-- <button id="FBSignIn" onclick = "facebookSignin()">Facebook Signin</button>
+   <button id="FBSignOut" onclick = "facebookSignout()">Facebook Signout</button> -->
 
    <script>
 
@@ -93,6 +93,10 @@ function facebookSignout() {
 }
 
     </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<button id="btn1"  class="fa fa-facebook" onclick = "facebookSignin()">  <br> SIGN IN</button>
+<button id="btn2"  class="fa fa-facebook" onclick = "facebookSignout()">  <br> SIGN OUT</button>
 
 
 </body>
