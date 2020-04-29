@@ -1,0 +1,24 @@
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/helpinghands.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 1vmax;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 4vmax;
+  text-align: center;
+}
+
+#description {
+  text-align: center;
+  line-height: 1.3;
+}
