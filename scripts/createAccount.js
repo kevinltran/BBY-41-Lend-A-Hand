@@ -6,7 +6,7 @@ function createAccount() {
     // is authenticated, then grab "uid" "displayName" and "email"
     // use "set()" with merge (if document did not exist it will be created)
 
-    firebase.auth().onAuthStateChanged(function(user){
+    const db = firebase.firestore();
         db.collection("users").doc(user.uid).set(
     	{
         "name":user.displayName,
@@ -14,5 +14,5 @@ function createAccount() {
          "address":user.address,
 
         },{ merge: true });
-    });
+    
 }
