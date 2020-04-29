@@ -1,32 +1,34 @@
-function write() {
-    // Fucntion that creates a new document in the users collection
+// Fucntion that creates a new document in the users collection
+let fullName;
+let phoneNumber;
+let emailAddress
+let homeAddress
 
-    document.getElementById("clicked").onclick = function () {
-        let fullName = document.getElementById("name").value;
-        let emailAddress = document.getElementById("email").value;
-        let homeAddress = document.getElementById("address").value;
-        let phoneNumber = document.getElementById("phone").value;
-        console.log(fullName);
-        console.log(emailAddress);
-        console.log(phoneNumber);
-        console.log(homeAddress);
+document.getElementById("clicked").onclick = function () {
+    fullName = document.getElementById("name").value;
+    emailAddress = document.getElementById("email").value;
+    homeAddress = document.getElementById("address").value;
+    phoneNumber = document.getElementById("phone").value;
+    console.log(fullName);
+    console.log(emailAddress);
+    console.log(phoneNumber);
+    console.log(homeAddress);
+    write(fullName, emailAddress, phoneNumber, homeAddress)
+};
 
-        db.collection("helper").add({
-            address: homeAddress,
-            email: emailAddress,
-            name: fullName,
-            phone: phoneNumber
-        })
-            .then(function (docRef) {
-                console.log("success: ", docRef.id)
-            })
-            .catch(function (error) {
-                console.log("error: ", error);
-            })
-    }
-
-
-
+function write(fullName, emailAddress, phoneNumber, homeAddress){
+    db.collection("helper").add({
+        address: homeAddress,
+        email: emailAddress,
+        name: fullName,
+        phone: phoneNumber
+    })
+    .then(function(docRef) {
+        console.log("success: ", docRef.id)
+    })
+    .catch(function(error) {
+        console.log("error: ", error);
+    })
 }
 
-write();
+
