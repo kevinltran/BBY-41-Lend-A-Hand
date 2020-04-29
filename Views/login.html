@@ -73,6 +73,9 @@ function facebookSignin() {
       var token = result.credential.accessToken;
       var user = result.user;
 
+      window.location.href = "confirmHelper.html"
+
+
       console.log(token)
       console.log(user)
    }).catch(function(error) {
