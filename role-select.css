@@ -1,0 +1,53 @@
+html, body{
+    height:100%;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    height: 100%;
+}
+
+.outer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height:100%;
+}
+
+#helper-block{
+    background-color: cadetblue;
+}
+
+#helpee-block{
+    background-color: chartreuse;
+}
+
+#helper-block:hover{
+    cursor: pointer;
+    border: solid yellow;
+}
+
+#helpee-block:hover{
+    cursor: pointer;
+    border: solid red;
+}
+
+.centered-top{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered-bottom{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
