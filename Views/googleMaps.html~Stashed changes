@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <head>  <link rel="stylesheet" href="css/googleMap.css" /></head>
 <body>
 
 <h1>My First Google Map</h1>
@@ -20,5 +21,3 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 </body>
 </html>
-
-
