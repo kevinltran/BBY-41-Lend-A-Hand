@@ -12,6 +12,7 @@ function createAccount() {
         "name":user.displayName,
          "email":user.email,
          "address":user.address,
+
         },{ merge: true });
     });
 }
