@@ -1,4 +1,4 @@
-// Function that creates a new document in the users collection
+// Fucntion that creates a new document in the users collection
 let fullName;
 let phoneNumber;
 let emailAddress
@@ -15,29 +15,31 @@ document.getElementById("clicked").onclick = function () {
     console.log(phoneNumber);
     console.log(homeAddress);
     write(fullName, emailAddress, phoneNumber, homeAddress)
+
+
 };
 
-// This function creates a new doc in our "Helpee" collection in our Database.
-function write(fullName, emailAddress, phoneNumber, homeAddress){
-    db.collection("users").add({
-        address: homeAddress,
-        email: emailAddress,
-        name: fullName,
-        phone: phoneNumber,
-        role: "helpee"
+// This function creates a new doc in our "Helper" collection in our Database.
+function write(fullName, emailAddress, phoneNumber, homeAddress) {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            db.collection("users").doc(user.uid).update({
+                address: homeAddress,
+                email: emailAddress,
+                name: fullName,
+                phone: phoneNumber,
+                role: "helpee"
+            })
+        }
     })
-    .then(function(docRef) {
-        console.log("success: ", docRef.id)
-    })
-    .catch(function(error) {
-        console.log("error: ", error);
-    })
+       
 
     //puts a delay on the redirect so the data can be written into our database.
-    setTimeout(function(){ redirect();}, 1000);
+    setTimeout(function () { redirect(); }, 1000);
 }
 
-//redirects the user to the helpee profile page.
-function redirect() { 
-    window.location.href = "helpeeProfile.html"
+//redirects the user to the helper main page.
+function redirect() {
+    window.location.href = "helpeeMain.html"
 }
+

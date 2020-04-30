@@ -20,31 +20,26 @@ document.getElementById("clicked").onclick = function () {
 };
 
 // This function creates a new doc in our "Helper" collection in our Database.
-function write(fullName, emailAddress, phoneNumber, homeAddress){
-    db.collection("users").add({
-        address: homeAddress,
-        email: emailAddress,
-        name: fullName,
-        phone: phoneNumber,
-<<<<<<< HEAD
-        role: "helper"
-=======
-        role: 'helper'
->>>>>>> c265be9dc971b514abec66cf2e0561c97a84cf32
+function write(fullName, emailAddress, phoneNumber, homeAddress) {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            db.collection("users").doc(user.uid).update({
+                address: homeAddress,
+                email: emailAddress,
+                name: fullName,
+                phone: phoneNumber,
+                role: "helper"
+            })
+        }
     })
-    .then(function(docRef) {
-        console.log("success: ", docRef.id)
-    })
-    .catch(function(error) {
-        console.log("error: ", error);
-    })
-      
+       
+
     //puts a delay on the redirect so the data can be written into our database.
-    setTimeout(function(){ redirect();}, 1000);
+    setTimeout(function () { redirect(); }, 1000);
 }
 
 //redirects the user to the helper main page.
-function redirect() { 
+function redirect() {
     window.location.href = "helperMain.html"
 }
 
