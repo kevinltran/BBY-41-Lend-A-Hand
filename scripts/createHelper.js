@@ -2,33 +2,52 @@
 let fullName;
 let phoneNumber;
 let emailAddress
-let homeAddress
+let homeAddress;
+let city;
+let postCode;
 
+//Gets the values from the fields when the user clicks confirm.
 document.getElementById("clicked").onclick = function () {
     fullName = document.getElementById("name").value;
     emailAddress = document.getElementById("email").value;
     homeAddress = document.getElementById("addressInput").value;
+    city = document.getElementById("city").value;
+    postCode = document.getElementById("postCode").value;
     phoneNumber = document.getElementById("phone").value;
     console.log(fullName);
     console.log(emailAddress);
     console.log(phoneNumber);
     console.log(homeAddress);
-    write(fullName, emailAddress, phoneNumber, homeAddress)
+    console.log(city);
+    console.log(postCode);
+    write(fullName, emailAddress, phoneNumber, homeAddress, city, postCode)
+
+
 };
 
-function write(fullName, emailAddress, phoneNumber, homeAddress){
-    db.collection("helper").add({
-        address: homeAddress,
-        email: emailAddress,
-        name: fullName,
-        phone: phoneNumber
+// This function creates a new doc in our "Helper" collection in our Database.
+function write(fullName, emailAddress, phoneNumber, homeAddress, city, postCode) {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            db.collection("users").doc(user.uid).update({
+                address: homeAddress,
+                email: emailAddress,
+                name: fullName,
+                phone: phoneNumber,
+                city: city,
+                postalCode: postCode,
+                role: "helper"
+            })
+        }
     })
-    .then(function(docRef) {
-        console.log("success: ", docRef.id)
-    })
-    .catch(function(error) {
-        console.log("error: ", error);
-    })
+       
+
+    //puts a delay on the redirect so the data can be written into our database.
+    setTimeout(function () { redirect(); }, 1000);
 }
 
+//redirects the user to the helper main page.
+function redirect() {
+    window.location.href = "helperMain.html"
+}
 

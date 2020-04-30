@@ -1,12 +1,12 @@
 function selectHelper(){
     document.getElementById("helper-block").addEventListener("click", function (e){
-        window.location.href = "confirmHelper.html"
+        window.location.href = "createHelper.html"
     })
 }
 
 function selectHelpee(){
     document.getElementById("helpee-block").addEventListener("click", function(e){
-        window.location.href = "confirmHelpee.html"
+        window.location.href = "createHelpee.html"
     })
 }
 //akgfasyurfgasdifgahil
