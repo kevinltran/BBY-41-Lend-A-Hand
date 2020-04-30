@@ -19,12 +19,12 @@ document.getElementById("clicked").onclick = function () {
 
 // This function creates a new doc in our "Helpee" collection in our Database.
 function write(fullName, emailAddress, phoneNumber, homeAddress){
-    db.collection("helpee").add({
+    db.collection("users").add({
         address: homeAddress,
         email: emailAddress,
         name: fullName,
         phone: phoneNumber,
-        role: "role"
+        role: "helpee"
     })
     .then(function(docRef) {
         console.log("success: ", docRef.id)
