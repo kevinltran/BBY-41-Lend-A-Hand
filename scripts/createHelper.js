@@ -17,11 +17,12 @@ document.getElementById("clicked").onclick = function () {
 };
 
 function write(fullName, emailAddress, phoneNumber, homeAddress){
-    db.collection("helper").add({
+    db.collection("users").add({
         address: homeAddress,
         email: emailAddress,
         name: fullName,
-        phone: phoneNumber
+        phone: phoneNumber,
+        role: 'helper'
     })
     .then(function(docRef) {
         console.log("success: ", docRef.id)
