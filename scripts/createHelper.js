@@ -2,25 +2,31 @@
 let fullName;
 let phoneNumber;
 let emailAddress
-let homeAddress
+let homeAddress;
+let city;
+let postCode;
 
 //Gets the values from the fields when the user clicks confirm.
 document.getElementById("clicked").onclick = function () {
     fullName = document.getElementById("name").value;
     emailAddress = document.getElementById("email").value;
     homeAddress = document.getElementById("addressInput").value;
+    city = document.getElementById("city").value;
+    postCode = document.getElementById("postCode").value;
     phoneNumber = document.getElementById("phone").value;
     console.log(fullName);
     console.log(emailAddress);
     console.log(phoneNumber);
     console.log(homeAddress);
-    write(fullName, emailAddress, phoneNumber, homeAddress)
+    console.log(city);
+    console.log(postCode);
+    write(fullName, emailAddress, phoneNumber, homeAddress, city, postCode)
 
 
 };
 
 // This function creates a new doc in our "Helper" collection in our Database.
-function write(fullName, emailAddress, phoneNumber, homeAddress) {
+function write(fullName, emailAddress, phoneNumber, homeAddress, city, postCode) {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             db.collection("users").doc(user.uid).update({
@@ -28,6 +34,8 @@ function write(fullName, emailAddress, phoneNumber, homeAddress) {
                 email: emailAddress,
                 name: fullName,
                 phone: phoneNumber,
+                city: city,
+                postalCode: postCode,
                 role: "helper"
             })
         }

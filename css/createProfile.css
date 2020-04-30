@@ -11,26 +11,46 @@ div#address{
   grid-template-columns: repeat(2,1fr);
 }
 
+
+div#city1{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+div#postalCode{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+#cityOuter{
+  padding-bottom: 1vh;
+}
+
+#postalCodeOuter{
+  padding-bottom: 3vh;
+}
+
+
 #addressOuter{
-  padding-bottom: 4vh;
+  padding-bottom: 1vh;
 }
 
 #numberOuter{
-  padding-bottom: 4vh;
+  padding-bottom: 3vh;
 }
 
 #emailAddress{
-  padding-bottom: 4vh;
+  padding-bottom: 3vh;
 }
 
 
 #photoBtn{
-  padding-bottom: 4vh;
+  padding-bottom: 3vh;
 }
 
 #fname{
-  padding-bottom: 4vh;
-  padding-top: 4vh;
+  padding-bottom: 3vh;
+  padding-top: 1vh;
 }
 
 #header {
