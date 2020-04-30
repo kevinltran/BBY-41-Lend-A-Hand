@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lend a hand</title>
-</head>
-<body>
+<html>
 
-  <script src="scripts/create_user.js"></script>
+<head>
+  <meta charset="Utf-8" />
+  <title>Lend A Hand</title>
+  <link rel="stylesheet" type="text/css" href="Styles/index.css" />
+
+  <!-- firebase stuff -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+  <!-- Bootstrap for Mobile-first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <!--  Div for containing logo and firebase login ui-->
+
+  <div id="container">
+    <!-- <div id="logo"> <img alt="logo" src="Images/logo.png"></div> -->
+    <div id="firebaseui-auth-container"></div>
+  </div>
+  <!-- Linking our own scripts -->
+
+  <!-- this contains the api key and firebase object creation and db reference -->
+  <script src="Scripts/firebase.js"></script>
+
+  <!--- this code is the login widget -->
+  <script src="Scripts/app.js"></script>
+
 
 </body>
+
 </html>
