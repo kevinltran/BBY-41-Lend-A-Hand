@@ -83,7 +83,6 @@ var firebaseConfig = {
 
 function facebookSignin() {
 
-   logedIn = false;
    firebase.auth().signInWithPopup(provider)
 
    .then(function(result) {
@@ -99,6 +98,14 @@ function facebookSignin() {
    });
 
 }
+
+
+// FB.login(function(response) {
+//      if (response.authResponse) {
+//         window.location.href = "confirmHelpee.html"
+//      }
+
+// });
 
 
 function facebookSignout() {
