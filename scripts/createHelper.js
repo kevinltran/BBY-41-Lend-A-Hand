@@ -4,6 +4,7 @@ let phoneNumber;
 let emailAddress
 let homeAddress
 
+//Gets the values from the fields when the user clicks confirm.
 document.getElementById("clicked").onclick = function () {
     fullName = document.getElementById("name").value;
     emailAddress = document.getElementById("email").value;
@@ -14,14 +15,18 @@ document.getElementById("clicked").onclick = function () {
     console.log(phoneNumber);
     console.log(homeAddress);
     write(fullName, emailAddress, phoneNumber, homeAddress)
+
+
 };
 
+// This function creates a new doc in our "Helper" collection in our Database.
 function write(fullName, emailAddress, phoneNumber, homeAddress){
     db.collection("helper").add({
         address: homeAddress,
         email: emailAddress,
         name: fullName,
-        phone: phoneNumber
+        phone: phoneNumber,
+        role: "helper"
     })
     .then(function(docRef) {
         console.log("success: ", docRef.id)
@@ -29,6 +34,13 @@ function write(fullName, emailAddress, phoneNumber, homeAddress){
     .catch(function(error) {
         console.log("error: ", error);
     })
+      
+    //puts a delay on the redirect so the data can be written into our database.
+    setTimeout(function(){ redirect();}, 1000);
 }
 
+//redirects the user to the helper main page.
+function redirect() { 
+    window.location.href = "helperMain.html"
+}
 
