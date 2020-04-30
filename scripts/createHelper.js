@@ -17,7 +17,18 @@ document.getElementById("clicked").onclick = function () {
 };
 
 function write(fullName, emailAddress, phoneNumber, homeAddress){
-    db.collection("users").add({
+    firebase.auth().onAuthStateChanged(function (user){
+        if(user) {
+            db.collection("users").doc(user.uid).update({
+                address: homeAddress,
+                email: emailAddress,
+                name: fullName,
+                phone: phoneNumber,
+                role: 'helper'
+            })
+        }
+    })
+    /*db.collection("users").doc(user.uid).update({
         address: homeAddress,
         email: emailAddress,
         name: fullName,
@@ -29,7 +40,7 @@ function write(fullName, emailAddress, phoneNumber, homeAddress){
     })
     .catch(function(error) {
         console.log("error: ", error);
-    })
+    })*/
 }
 
 
