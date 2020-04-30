@@ -71,7 +71,8 @@
                console.log(error.code);
                console.log(error.message);
             });
-
+            
+           setTimeout(function(){ redirect();}, 1000);
       }
 
       function facebookSignout() {
@@ -85,6 +86,9 @@
       }
 
 
+    function redirect() { 
+    window.location.href = "helperMain.html"
+    }
    </script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
