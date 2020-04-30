@@ -21,6 +21,38 @@
 
 </head>
 <body>
+
+   <!-- // java sdk for FB button -->
+   <div id="fb-root"></div>
+   <script async defer crossorigin="anonymous"
+   src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=1073205286398589&autoLogAppEvents=1">
+   </script>
+
+<script>
+   window.fbAsyncInit = function() {
+     FB.init({
+       appId      : '{1073205286398589}',
+       cookie     : true,
+       xfbml      : true,
+       version    : '{v6.0}'
+     });
+
+     FB.AppEvents.logPageView();
+
+   };
+
+   (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+ </script>
+
+
+
    <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/7.14.2/firebase-app.js"></script>
 
@@ -46,43 +78,28 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
 
-
-
-      window.fbAsyncInit = function() {
-         FB.init ({
-            appId      : '1073205286398589',
-            xfbml      : true,
-            version    : 'v2.6'
-         });
-      };
-
-      (function(d, s, id) {
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-      } (document, 'script', 'facebook-jssdk'));
-
       var provider = new firebase.auth.FacebookAuthProvider();
 
+
 function facebookSignin() {
+
+   logedIn = false;
    firebase.auth().signInWithPopup(provider)
 
    .then(function(result) {
       var token = result.credential.accessToken;
       var user = result.user;
 
-      window.location.href = "confirmHelper.html"
-
-
       console.log(token)
       console.log(user)
+
    }).catch(function(error) {
       console.log(error.code);
       console.log(error.message);
    });
+
 }
+
 
 function facebookSignout() {
    firebase.auth().signOut()
@@ -94,16 +111,20 @@ function facebookSignout() {
    });
 }
 
+   // window.location.href = "confirmHelper.html"
 
 
     </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<button id="btn1"  class="fa fa-facebook" onclick = "facebookSignin()">  <br> SIGN IN</button>
-<button id="btn2"  class="fa fa-facebook" onclick = "facebookSignout()">  <br> SIGN OUT</button>
+<!-- <button id="btn1"  class="fa fa-facebook" onclick = "facebookSignin()">  <br> SIGN IN</button> -->
 
 
+<!-- <button id="btn2"  class="fa fa-facebook" onclick = "facebookSignout()">  <br> SIGN OUT</button> -->
 
+
+<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="rounded"
+data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
 
 
 
