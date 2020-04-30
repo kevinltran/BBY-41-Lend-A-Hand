@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,96 +19,93 @@
    <link rel="stylesheet" href="../css/FBLogin.css">
 
 </head>
+
 <body>
 
    <!-- // java sdk for FB button -->
    <div id="fb-root"></div>
    <script async defer crossorigin="anonymous"
-   src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=1073205286398589&autoLogAppEvents=1">
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=1073205286398589&autoLogAppEvents=1">
+      </script>
 
-   window.fbAsyncInit = function() {
-     FB.init({
-       appId      : '{1073205286398589}',
-       cookie     : true,
-       xfbml      : true,
-       version    : '{v6.0}'
-     });
+   <script>
+      window.fbAsyncInit = function () {
+         FB.init({
+            appId: '{1073205286398589}',
+            cookie: true,
+            xfbml: true,
+            version: '{v6.0}'
+         });
 
-     FB.AppEvents.logPageView();
+         FB.AppEvents.logPageView();
 
-   };
+      };
 
-   (function(d, s, id){
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+      (function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) { return; }
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+   </script>
 
 
-var firebaseConfig = {
-    apiKey: "AIzaSyAdQNsdN8jh2Tv1Ot0ADsbRqbzlUMYQXEU",
-    authDomain: "lend-a-hand-9861e.firebaseapp.com",
-    databaseURL: "https://lend-a-hand-9861e.firebaseio.com/",
-    projectId: "lend-a-hand-9861e",
-    storageBucket: "lend-a-hand-9861e.appspot.com",
-    messagingSenderId: "230477140946",
-    appId: "1:230477140946:web:f1c6cb4bb6ea0533416e0b"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+   <script>
+
+      var firebaseConfig = {
+         apiKey: "AIzaSyAdQNsdN8jh2Tv1Ot0ADsbRqbzlUMYQXEU",
+         authDomain: "lend-a-hand-9861e.firebaseapp.com",
+         databaseURL: "https://lend-a-hand-9861e.firebaseio.com/",
+         projectId: "lend-a-hand-9861e",
+         storageBucket: "lend-a-hand-9861e.appspot.com",
+         messagingSenderId: "230477140946",
+         appId: "1:230477140946:web:f1c6cb4bb6ea0533416e0b"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
 
       var provider = new firebase.auth.FacebookAuthProvider();
 
-//bugs suck
-function facebookSignin() {
+      //bugs suck
+      function facebookSignin() {
 
-   firebase.auth().signInWithPopup(provider)
+         firebase.auth().signInWithPopup(provider)
 
-   .then(function(result) {
-      var token = result.credential.accessToken;
-      var user = result.user;
+            .then(function (result) {
+               var token = result.credential.accessToken;
+               var user = result.user;
 
-      console.log(token)
-      console.log(user)
+               console.log(token)
+               console.log(user)
 
-   }).catch(function(error) {
-      console.log(error.code);
-      console.log(error.message);
-   });
+            }).catch(function (error) {
+               console.log(error.code);
+               console.log(error.message);
+            });
 
-}
+      }
 
-function facebookSignout() {
-   firebase.auth().signOut()
+      function facebookSignout() {
+         firebase.auth().signOut()
 
-   .then(function() {
-      console.log('Signout successful!')
-   }, function(error) {
-      console.log('Signout failed')
-   });
-}
-
-
-    </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            .then(function () {
+               console.log('Signout successful!')
+            }, function (error) {
+               console.log('Signout failed')
+            });
+      }
 
 
-<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="rounded"
-data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
+   </script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="rounded"
+      data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
