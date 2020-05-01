@@ -23,6 +23,7 @@ function update() {
 
 }
 
+
 //Deletes the user's listed items from database
 function remove(item) {
   firebase.auth().onAuthStateChanged(function (user) {
