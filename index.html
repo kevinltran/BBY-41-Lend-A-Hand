@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lend-a-Hand</title>
-
-    <!-- firebase stuff -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-    <!-- Bootstrap for Mobile-first -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-</head>
-<body>
-
+  <title>Welcome to Lend-A-Hand!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/welcome.css" />
   <script src="scripts/firebase.js"></script>
-  <script src="scripts/authentication.js"></script>
-  <script src="scripts/createAccount.js"></script>
-  <script src="scripts/app.js"></script>
+</head>
 
-<h1>helloWorld</h1>
+<body>
+  <a href="signIn.html">
+    <div id="body">
+      <div id="welcomeMsg">
+        <h1>Welcome to</h1>
+        <h1>Lend-A-Hand</h1>
+      </div>
 
+      <div id="description">
+        <h3>We connect</h3>
+        <h2>Disadvantaged people</h2>
+        <h3>with</h3>
+        <h2>Good samaritans</h2>
+      </div>
+
+      <div id="continue">
+        <h3>Tap anywhere to continue</h3>
+      </div>
+    </div>
+  </a>
 </body>
+
 </html>
