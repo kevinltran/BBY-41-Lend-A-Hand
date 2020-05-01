@@ -25,19 +25,20 @@ function update() {
 
 //Deletes the user's listed items from database
 function remove(item) {
-  // firebase.auth().onAuthStateChanged(function (user) {
-  // if (user) {
-  console.log(item);
-  // db.collection("users").doc("D2LCilq8MP8WcoK0Q6VL").update({
-  //   list: firebase.firestore.FieldValue.arrayRemove(item)
-  // }).then(function () {
-  //   console.log("removed");
-  // })
-  //   .catch(function (error) {
-  //     console.log("error");
-  //   })
-  // }
-  //   })
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(item);
+      db.collection("users").doc(user.uid).update({
+        list: firebase.firestore.FieldValue.arrayRemove(item)
+      }).then(function () {
+        console.log("removed");
+        window.location.reload();
+      })
+        .catch(function (error) {
+          console.log("error");
+        })
+    }
+  })
 }
 //Reads and displays the user's listed items from database
 function getItem() {
@@ -52,7 +53,7 @@ function getItem() {
             snap.data().list.forEach(function (item) {
               let li = document.createElement("li");
               li.innerHTML = JSON.stringify(item);
-              // li.innerHTML += "&emsp;<button onclick='remove(" + item + ")'>Delete</button>";
+              li.innerHTML += "&emsp;<button onclick='remove(" + JSON.stringify(item) + ")'>Delete</button>";
               table.append(li);
             });
           }
