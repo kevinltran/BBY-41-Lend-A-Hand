@@ -6,11 +6,10 @@ function viewHelpees() {
       helpees.get().then(function (list) {
         list.forEach(function (doc) {
           let name = doc.data().name;
-          let link = document.createElement("a");
+          let link = document.createElement("button");
           let br = document.createElement("br");
           link.innerHTML = name;
-          link.setAttribute("href", "404.html");
-          link.setAttribute("onclick", "request()");
+          link.setAttribute("onclick", "viewInfo(" + JSON.stringify(doc.id) + ")");
           info.append(link);
           info.append(br);
         });
