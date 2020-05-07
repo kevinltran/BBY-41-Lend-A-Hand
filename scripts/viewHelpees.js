@@ -14,6 +14,8 @@ function viewHelpees() {
           info.append(br);
         });
       });
+
+      // delete next 2 lines to remove "View notifications" anchor
       let notifications = $("<a href='helperNotifications.html'>View notifications</a>");
       $("body").append(notifications);
     }
