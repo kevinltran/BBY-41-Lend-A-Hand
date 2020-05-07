@@ -80,7 +80,7 @@
             db.collection("users").doc(user.uid).get().then(function (snap) {
               if (snap.data().role == "helper") {
                 console.log("redirect to helper");
-                window.location.assign("Views/helperMain.html")
+                window.location.assign("Views/googleMaps-example.html")//"Views/helperMain.html")
               } else {
                 console.log("redirect helpee");
                 window.location.assign("Views/helpeeProfile.html")

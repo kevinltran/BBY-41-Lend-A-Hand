@@ -48,6 +48,6 @@ function write(fullName, emailAddress, phoneNumber, homeAddress, city, postCode)
 
 //redirects the user to the helper main page.
 function redirect() {
-    window.location.href = "helperMain.html"
+    window.location.href = "googleMaps-example.html" //"helperMain.html"
 }
 
