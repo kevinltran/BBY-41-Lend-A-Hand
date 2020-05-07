@@ -6,26 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../css/createProfile.css" />
-  
+
 </head>
 
 <body>
 
   <div id='header'>
-    <h1>Confirm Profile Details</h1>
+    <h1>Create A Profile</h1>
   </div>
 
   <div id='form'>
-    
+
     <form>
-      <div id="fname">
+      <!-- <div id="fname">
         <label for='name'>Confirm Full Name:</label>
         <input id='name' type="text" placeholder="Enter Full Name" required="required" /></div>
 
 
         <div id="emailAddress">
           <label for='email'>Confirm Email:</label>
-          <input id='email' type="text" placeholder="Enter an email" required="required" /></div>
+          <input id='email' type="text" placeholder="Enter an email" required="required" /></div> -->
 
       <div id="addressOuter">
         <div id="address"><label for='addressInput'>Address:</label>
@@ -38,9 +38,9 @@
 
       </div>
 
-      
+
       <div id="cityOuter">
-        <div id="city1"><label for='city'>City:</label>
+        <div id="city1"><label for='city' required="required">City:</label>
           <div class="help-tip">
             <p>Your address will only be displayed to providers that you accept requests from.</p>
           </div>
@@ -50,7 +50,7 @@
 
       </div>
 
-      
+
       <div id="postalCodeOuter">
         <div id="postalCode"><label for='postCode'>Postal-Code:</label>
           <div class="help-tip">
@@ -75,32 +75,39 @@
         <input id='phone' type="text" placeholder="Enter Phone Number" required="required" />
       </div>
 
-
-
-      <div>
-        <div id="image"> <label for='photo'>Photo (Optional):</label>
+      <div id=bioOuter>
+        <div id="bio">
+          <label for='userBio'>Description:</label>
           <div class="help-tip">
-            <p>A profile picture helps the providers know who they are helping.</p>
+            <p>Describe yourself in a few words.</p>
           </div>
         </div>
 
-        <button id='photo' type="button">Choose from Device</button>
+        <input id='userBio' type="text" placeholder="Describe yourself" required="required" />
       </div>
 
+      <div id="profilePic">
+        <form>
+          <div class="form-group">
+            <label id="image" for="exampleFormControlFile1">Photo (Optional)</label>
 
-      <div id="photoBtn">
-
-        <input id ="clicked" type="button" value="Confirm Details">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+        </form>
       </div>
 
-    </form>
+      <div id ="confirm">
+        <input id="clicked" type="button" value="Confirm Details"></div>
+  </div>
+
+  </form>
   </div>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <script src = "../scripts/firebase.js"></script>
-  <script src = "../scripts/createHelpee.js"></script>
+  <script src="../scripts/firebase.js"></script>
+  <script src="../scripts/createHelpee.js"></script>
 </body>
 
 </html>

@@ -1,38 +1,88 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-  <title>Edit Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/profilePages.css" />
 </head>
 
 <body>
-  <div id='header'>
-    <h1>Edit Profile</h1>
-  </div>
 
-  <div id='form'>
-    <form>
-      <input id="item" type="text" placeholder="Enter item name" />
-      <button onclick='update()' type="button">Update</button>
-    </form>
-  </div>
+<div>
+  <div class="profileImg">
+    <img src="../images/lady.jpg" alt="helpee">
+    <div class="container">
+    <p id = "bio">Description</p>
+    </div>
+</div>
 
-  <div id='info'></div>
 
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../scripts/firebase.js"></script>
-  <script src="../scripts/helpeeProfile.js"></script>
+<div class = "flex-container">
+  <section>
+    <article id = "userName"><h5><strong>NAME</strong></h5></article>
+    <article><p id="name"></p></article>
+    <article></article>
+  </section>
 
-  <script>getItem();</script>
+
+  <section>
+    <article id = "userEmail"><h5><strong>EMAIL</strong></h5></article>
+    <article><p id="email"></p></article> 
+    <article></article>  
+  </section>
+
+
+  <section>
+    <article id = "userAddress"><h5><strong>ADDRESS</strong></h5></article>
+    <article><p id="address"></p></article>
+    <article id = "editAddress"><button id = "edit1">Edit</button></article>
+  </section>
+
+
+  <section>
+    <article id = "userCity"><h5><strong>CITY</strong></h5></article>
+    <article><p id="city"></p></article>
+    <article id = "editCity"><button id = "edit2">Edit</button></article>
+  </section>
+
+
+  <section>
+    <article id = "userCode"><h5><strong>POSTAL CODE</strong></h5></article>
+    <article><p id="postCode"></p></article>
+    <article id = "editCode"><button id = "edit3">Edit</button></article>
+  </section>
+
+
+  <section>
+    <article id = "userPhone"><h5><strong>PHONE NUMBER</strong></h5></article>
+    <article><p id="phone"></p></article>
+    <article id = "editNumber"><button id = "edit4">Edit</button></article>
+  </section>
+</div>
+ 
+
+<div id = "button">
+  <button id="clicked1">Item List</button>
+  <button id="clicked2">Requests</button>
+</div>
+
+
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../scripts/firebase.js"></script>
+<script src="../scripts/helpeeProfile.js"></script>
+<script src="../scripts/requests.js"></script>
+
 
 </html>
