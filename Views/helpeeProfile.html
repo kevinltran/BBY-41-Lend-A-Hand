@@ -1,20 +1,75 @@
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/profilePages.css" />
 </head>
+
 <body>
-    <p id = "name">Name</p>
-    <p id = "email">Email</p>
-    <p id = "address">Address</p>
-    <p id = "city">City</p>
-    <p id ="postCode">Postal Code</p>
-    <p id = "phone">Phone Number</p>
-    <h3>Items</h3>
-    <p id = "list"></p>
-    <button id = "clicked1">Update Item List</button>
-    <button id = "clicked2">Requests</button>
+
+<div>
+  <div class="profileImg">
+    <img src="../images/lady.jpg" alt="helpee">
+    <div class="container">
+    <p id = "bio">Description</p>
+    </div>
+</div>
+
+
+<div class = "flex-container">
+  <section>
+    <article id = "userName"><h5><strong>NAME</strong></h5></article>
+    <article><p id="name"></p></article>
+    <article></article>
+  </section>
+
+
+  <section>
+    <article id = "userEmail"><h5><strong>EMAIL</strong></h5></article>
+    <article><p id="email"></p></article> 
+    <article></article>  
+  </section>
+
+
+  <section>
+    <article id = "userAddress"><h5><strong>ADDRESS</strong></h5></article>
+    <article><p id="address"></p></article>
+    <article id = "editAddress"><button id = "edit1">Edit</button></article>
+  </section>
+
+
+  <section>
+    <article id = "userCity"><h5><strong>CITY</strong></h5></article>
+    <article><p id="city"></p></article>
+    <article id = "editCity"><button id = "edit2">Edit</button></article>
+  </section>
+
+
+  <section>
+    <article id = "userCode"><h5><strong>POSTAL CODE</strong></h5></article>
+    <article><p id="postCode"></p></article>
+    <article id = "editCode"><button id = "edit3">Edit</button></article>
+  </section>
+
+
+  <section>
+    <article id = "userPhone"><h5><strong>PHONE NUMBER</strong></h5></article>
+    <article><p id="phone"></p></article>
+    <article id = "editNumber"><button id = "edit4">Edit</button></article>
+  </section>
+</div>
+ 
+
+<div id = "button">
+  <button id="clicked1">Item List</button>
+  <button id="clicked2">Requests</button>
+</div>
+
+
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
@@ -28,5 +83,6 @@
 <script src="../scripts/firebase.js"></script>
 <script src="../scripts/helpeeProfile.js"></script>
 <script src="../scripts/requests.js"></script>
-<script>request();</script>
+
+
 </html>

@@ -4,20 +4,33 @@
 <head>
   <title>Edit Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <link rel="stylesheet" href="../css/updateList.css" />
 </head>
 
 <body>
-  <div id='header'>
-    <h1>Edit Profile</h1>
+
+  <div>
+    <div id="header">
+      <h1>Your Item List</h1>
+    </div>
+
+    <div id = "form">
+      <form>
+        <input id="item" type="text" placeholder="Enter item name" />
+        <button onclick='update()' type="button">Add Item</button>
+      </form>
+    </div>
   </div>
 
-  <div id='form'>
-    <form>
-      <input id="item" type="text" placeholder="Enter item name" />
-      <button onclick='update()' type="button">Update</button>
-    </form>
+  <div id = "list">
+    <div><p id ="info"></p></div>
+    <div></div>
+    
   </div>
+
+
+
+
 
   <div id='info'></div>
 
@@ -32,7 +45,9 @@
   <script src="../scripts/firebase.js"></script>
   <script src="../scripts/updateList.js"></script>
 
+
   <script>getItem();</script>
+
 </body>
 
 </html>

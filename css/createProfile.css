@@ -2,10 +2,17 @@ div#number{
   display: grid;
   grid-template-columns:  2fr 1fr
 }
-div#image{
+
+div#bio{
   display: grid;
   grid-template-columns:  2fr 1fr
 }
+
+div#profilePic{
+  padding-bottom: 6vh;
+padding-top:1vh;
+}
+
 div#address{
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -27,7 +34,7 @@ div#postalCode{
 }
 
 #postalCodeOuter{
-  padding-bottom: 3vh;
+  padding-bottom: 1vh;
 }
 
 
@@ -36,21 +43,30 @@ div#postalCode{
 }
 
 #numberOuter{
-  padding-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
 }
+
 
 #emailAddress{
-  padding-bottom: 3vh;
+  padding-bottom: 4vh;
+}
+
+div#confirm{
+
+  padding-top:5vh;
+  margin: 0;
+  position: absolute;
+  left: 48%;
+  -ms-transform: translateX(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 
-#photoBtn{
-  padding-bottom: 3vh;
-}
 
 #fname{
-  padding-bottom: 3vh;
-  padding-top: 1vh;
+  padding-bottom: 4vh;
+  padding-top: 2vh;
 }
 
 #header {
@@ -80,7 +96,7 @@ h1 {
 
 input {
   border-radius: 8px;
-  border: 2px groove lightblue;
+  /* border: 2px groove lightblue; */
   padding: 2px;
 }
 

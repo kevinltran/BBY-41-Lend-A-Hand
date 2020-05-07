@@ -24,6 +24,8 @@ function update() {
 }
 
 
+
+
 //Deletes the user's listed items from database
 function remove(item) {
   firebase.auth().onAuthStateChanged(function (user) {
@@ -52,16 +54,18 @@ function getItem() {
 
           if (snap.exists) {
             snap.data().list.forEach(function (item) {
-              let li = document.createElement("li");
+              let li = document.createElement("p");
               li.innerHTML = JSON.stringify(item);
-              li.innerHTML += "&emsp;<button onclick='remove(" + JSON.stringify(item) + ")'>Delete</button>";
+
+            
+              li.innerHTML += "&emsp;<button id = 'delete' onclick='remove(" + JSON.stringify(item) + ")'>Remove</button>";
               table.append(li);
             });
           }
         });
       with ($("#info")) {
         html(table);
-        css("text-align", "left");
+       
       }
     }
     else {
@@ -69,3 +73,6 @@ function getItem() {
     }
   });
 }
+
+
+

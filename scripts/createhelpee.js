@@ -5,6 +5,7 @@ let emailAddress
 let homeAddress;
 let city;
 let postCode;
+let bio;
 
 //Gets the values from the fields when the user clicks confirm.
 document.getElementById("clicked").onclick = function () {
@@ -14,12 +15,14 @@ document.getElementById("clicked").onclick = function () {
     city = document.getElementById("city").value;
     postCode = document.getElementById("postCode").value;
     phoneNumber = document.getElementById("phone").value;
+    bio = document.getElementById("userBio").value;
     console.log(fullName);
     console.log(emailAddress);
     console.log(phoneNumber);
     console.log(homeAddress);
     console.log(city);
     console.log(postCode);
+    console.log(bio);
     write(fullName, emailAddress, phoneNumber, homeAddress, city, postCode)
 
 
@@ -36,6 +39,7 @@ function write(fullName, emailAddress, phoneNumber, homeAddress, city, postCode)
                 phone: phoneNumber,
                 city: city,
                 postalCode: postCode,
+                description: bio,
                 role: "helpee"
             })
         }
