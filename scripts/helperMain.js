@@ -23,7 +23,6 @@ function initMap() {
             infoWindow.setContent('You are here');
             infoWindow.open(map);
             map.setCenter(pos);
-            // Display distance information
 
             btn.onclick = function () {
                 rad = distance.value * 1000;
@@ -67,12 +66,21 @@ function initMap() {
                                                     }
                                                     else if (directionsData.distance.value <= rad) {
                                                         console.log(doc.data().name + directionsData.distance.text);
-                                                        viewHelpees();
+                                                        let info = document.getElementById("info");
+                                                        let name = doc.data().name;
+                                                        let link = document.createElement("button");
+                                                        let br = document.createElement("br");
+                                                        link.innerHTML = name;
+                                                        link.setAttribute("onclick", "viewInfo(" + JSON.stringify(doc.id) + "," + JSON.stringify(user.uid) + ")");
+                                                        info.append(link);
+                                                        info.append(br);            
                                                     }
                                                 }
                                             });
                                     }
                                 })
+                                let notifications = $("<a href='helperNotifications.html'>View notifications</a>");
+                                $("body").append(notifications);  
                             })
                         })
                     }
@@ -82,7 +90,7 @@ function initMap() {
     }
 }
 
-function viewHelpees() {
+/*function viewHelpees() {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         let info = document.getElementById("info");
@@ -107,7 +115,8 @@ function viewHelpees() {
         console.log("not logged in");
       }
     });
-  }
+  }*/
+
 
 /*function createCard(helpee) {
     let card = document.createElement('div');

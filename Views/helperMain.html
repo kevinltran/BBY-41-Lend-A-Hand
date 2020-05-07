@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -20,8 +21,9 @@
         <input type="text" id="distance" name="distance">
         <input type="button" value="Submit" id="btn">
     </form>
-    <div id="nearYou">
+    <div id='info'>
     </div>
+    <div id='popup' style='display: none'></div>
 
 
     <!--Bootstrap, Firebase and Google Maps API etc -->
@@ -43,6 +45,10 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdQNsdN8jh2Tv1Ot0ADsbRqbzlUMYQXEU&callback=initMap">
         </script>
     <script src="../scripts/helperMain.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../scripts/helpeeInfo.js"></script>
+    <script src="../scripts/sendRequest.js"></script>
+
 </body>
 
 </html>
