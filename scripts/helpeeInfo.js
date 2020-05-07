@@ -1,4 +1,4 @@
-function viewInfo(id) {
+function viewInfo(id, userId) {
   let popup = document.getElementById("popup");
   db.collection("users").get().then(function (xlist) {
     xlist.forEach(function (doc) {
@@ -15,7 +15,7 @@ function viewInfo(id) {
         }
         popup.innerHTML += "</ul>";
         const footer = $("<div></div>");
-        const button = $("<button onclick='sendReq()'>Request To Help</button>");
+        const button = $("<button onclick='sendRequest(" + JSON.stringify(doc.id) + "," + JSON.stringify(userId) + ")'>Request To Help</button>");
         $(footer).css("display", "flex");
         $(footer).css("justify-content", "center");
         $(button).css("width", "100%");

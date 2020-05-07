@@ -9,11 +9,13 @@ function viewHelpees() {
           let link = document.createElement("button");
           let br = document.createElement("br");
           link.innerHTML = name;
-          link.setAttribute("onclick", "viewInfo(" + JSON.stringify(doc.id) + ")");
+          link.setAttribute("onclick", "viewInfo(" + JSON.stringify(doc.id) + "," + JSON.stringify(user.uid) + ")");
           info.append(link);
           info.append(br);
         });
       });
+      let notifications = $("<a href='helperNotifications.html'>View notifications</a>");
+      $("body").append(notifications);
     }
     else {
       console.log("not logged in");
