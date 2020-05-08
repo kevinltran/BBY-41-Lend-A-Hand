@@ -20,7 +20,7 @@ main{
 #backgroundContainer{
     grid-row-start: 1;
     grid-row-end: 4;
-    background-image: url(/header_logo.png);
+    background-image: url(/images/header_logo.png);
   /* Full height */
   height: 100%;
 
