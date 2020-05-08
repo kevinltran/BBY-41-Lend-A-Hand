@@ -56,7 +56,6 @@ grid-template-areas:
 }
 #Rob{
 grid-area: Rob;
-background-color: gold;
 width: 25vw;
 /* height: 100vh; */
 text-align: center;
@@ -67,7 +66,6 @@ text-align: center;
 }
 #Leon{
     grid-area: Leon;
-background-color: aqua;
 width: 25vw;
 /* height: 100vh; */
 text-align: center;
@@ -79,7 +77,6 @@ text-align: center;
 }
 #Kevin{
     grid-area: Kevin;
-background-color: blueviolet;
 width: 25vw;
 /* height: 100vh; */
 text-align: center;
@@ -91,7 +88,6 @@ text-align: center;
 }
 #Oves{
     grid-area: Oves;
-background-color: chartreuse;
 width: 25vw;
 /* height: 100vh; */
 text-align: center;
