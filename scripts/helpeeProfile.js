@@ -158,7 +158,7 @@ function update1() {
         })
         console.log('success')
     })
-    setTimeout(function () { window.location.reload(); }, 200);
+    setTimeout(function () { window.location.reload(); }, 500);
 
 }
 function update2() {
@@ -170,7 +170,7 @@ function update2() {
         })
         console.log('success')
     })
-    setTimeout(function () { window.location.reload();}, 200);
+    setTimeout(function () { window.location.reload();}, 500);
 
 }
 
@@ -183,7 +183,7 @@ function update3() {
         })
         console.log('success')
     })
-    setTimeout(function () { window.location.reload();  }, 200);
+    setTimeout(function () { window.location.reload();  }, 500);
 
 }
 function update4() {
@@ -195,7 +195,7 @@ function update4() {
         })
         console.log('success')
     })
-    setTimeout(function () { window.location.reload(); }, 200);
+    setTimeout(function () { window.location.reload(); }, 500);
 
 }
 
