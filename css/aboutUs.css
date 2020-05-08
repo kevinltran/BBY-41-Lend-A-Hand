@@ -1,0 +1,127 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+main{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 9vh repeat(3,25vh) 16vh;
+  grid-template-areas:
+  "header header header header"
+  "bio bio bio bio"
+  "member member member member"
+  "pic pic pic pic"
+  "contact contact contact contact";
+}
+header {
+    grid-area: header;
+    /* background-color: rgb(51, 138, 179); */
+    text-align: center;
+    font-size: 50px;
+  }
+#headerWords{
+    text-align: center;
+    font-size: 50px;
+}
+#logoPic{
+float: left;
+margin-top: -245px;
+}
+ section, #ourStory{
+    grid-area: bio;
+    font-size: larger;
+    /* background-color: aqua; */
+}
+#headline{
+    text-align: center;
+}
+#profiles{
+    grid-area: member;
+    /* background-color: blue; */
+}
+#proHeadline{
+    text-align: center;
+    font-size: larger;
+}
+#profilePicsDiv{
+    display: flex;
+grid-template-columns: repeat(4,1fr);
+grid-template-rows: repeat(4,1fr);
+grid-template-areas:
+"Rob" "Leon" "Kevin" "Oves"
+}
+#Rob{
+grid-area: Rob;
+background-color: gold;
+width: 25vw;
+/* height: 100vh; */
+text-align: center;
+
+}
+#robPic{
+
+}
+#Leon{
+    grid-area: Leon;
+background-color: aqua;
+width: 25vw;
+/* height: 100vh; */
+text-align: center;
+
+}
+#leonPic{
+
+
+}
+#Kevin{
+    grid-area: Kevin;
+background-color: blueviolet;
+width: 25vw;
+/* height: 100vh; */
+text-align: center;
+
+}
+#kevinPic{
+
+
+}
+#Oves{
+    grid-area: Oves;
+background-color: chartreuse;
+width: 25vw;
+/* height: 100vh; */
+text-align: center;
+
+}
+#ovesPic{
+
+
+}
+#bio{
+    font-size: larger;
+    width: 100vw;
+    text-align: center;
+}
+#pics{
+    grid-area: pic;
+    background-color: chocolate;
+}
+#footerHeadline{
+    font-size: 65px;
+}
+#contact{
+    grid-area: contact;
+    background-color: crimson;
+    text-align: center;
+
+}
+#email{
+font-size: 50px;
+}
+#contactInfo{
+    font-size: 40px;
+}
