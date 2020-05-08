@@ -57,7 +57,6 @@ grid-template-areas:
 #Rob{
 grid-area: Rob;
 width: 25vw;
-/* height: 100vh; */
 text-align: center;
 
 }
@@ -67,7 +66,6 @@ text-align: center;
 #Leon{
     grid-area: Leon;
 width: 25vw;
-/* height: 100vh; */
 text-align: center;
 
 }
@@ -78,7 +76,6 @@ text-align: center;
 #Kevin{
     grid-area: Kevin;
 width: 25vw;
-/* height: 100vh; */
 text-align: center;
 
 }
@@ -89,7 +86,6 @@ text-align: center;
 #Oves{
     grid-area: Oves;
 width: 25vw;
-/* height: 100vh; */
 text-align: center;
 
 }
