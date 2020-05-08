@@ -17,16 +17,26 @@ main{
   "pic pic pic pic"
   "contact contact contact contact";
 }
+#backgroundContainer{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    background-image: url(/header_logo.png);
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
 header {
     grid-area: header;
     /* background-color: rgb(51, 138, 179); */
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
+
   }
-#headerWords{
-    text-align: center;
-    font-size: 50px;
-}
 #logoPic{
 float: left;
 margin-top: -245px;
@@ -35,6 +45,11 @@ margin-top: -245px;
     grid-area: bio;
     font-size: larger;
     /* background-color: aqua; */
+}
+#bio{
+    font-size: larger;
+    width: 100vw;
+    text-align: center;
 }
 #headline{
     text-align: center;
@@ -93,14 +108,10 @@ text-align: center;
 
 
 }
-#bio{
-    font-size: larger;
-    width: 100vw;
-    text-align: center;
-}
 #pics{
     grid-area: pic;
-    background-color: chocolate;
+    background-color: black;
+
 }
 #footerHeadline{
     font-size: 65px;
