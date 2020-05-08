@@ -42,11 +42,7 @@ function showProfile() {
                 console.log("Could not find user", error);
             });
 
-            db.collection('users').doc(user.uid).get().then(function (snap) {
-                document.getElementById("bio").innerHTML = snap.data().description;
-            }).catch(function (error) {
-                console.log("Could not find user", error);
-            });
+         
 
         } else {
             console.log("not logged in");
@@ -56,14 +52,6 @@ function showProfile() {
 }
 
 
-
-document.getElementById("clicked1").onclick = function () {
-    window.location.href = "updateList.html"
-}
-
-document.getElementById("clicked2").onclick = function () {
-    window.location.href = "requests.html"
-}
 
 
 
@@ -198,6 +186,8 @@ function update4() {
     setTimeout(function () { window.location.reload(); }, 200);
 
 }
-
+document.getElementById("map").onclick = function () {
+    window.location.href = "helperMain.html"
+}
 
 showProfile();

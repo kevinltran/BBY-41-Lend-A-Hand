@@ -1,0 +1,116 @@
+body{
+    background-color: lightblue;
+
+}
+div.profileImg {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin:25px;
+      }
+ div.container {
+        text-align: center;
+        padding: 10px 20px;
+ }
+
+img{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+section{
+    border: 1px solid black;
+    padding: 5px;
+    display:flex;
+    justify-content: space-between;
+}
+
+#userName{
+  
+}
+
+#userEmail{
+  
+}
+
+#userAddress{
+  
+}
+
+#userCity{
+
+}
+
+#userCode{
+    
+}
+
+#userPhone{
+  
+}
+
+#editAddress{
+
+}
+
+#editCity{
+   
+}
+
+#editCode{
+    
+}
+
+#editNumber{
+  
+}
+
+#button{
+    display: grid;
+   grid-template-columns: 50% 48%;
+   grid-column-gap: 2%;
+   
+}
+
+#button{
+   grid-column-gap: 2%;
+   width: 100%;
+   
+}
+
+#clicked1{
+    border: solid;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#clicked2{ 
+    border: solid;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#map{ 
+    border: solid;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}
+
