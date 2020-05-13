@@ -36,7 +36,7 @@ function initMap() {
                     center: pos,
                     radius: rad
                 })
-
+                
                 //Calcuates distance between helper and helpee
                 var directionsService = new google.maps.DirectionsService();
                 firebase.auth().onAuthStateChanged(function (user) {
