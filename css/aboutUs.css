@@ -172,7 +172,7 @@ font-size: 50px;
 
 
 /* Media queries */
-@media screen and (max-width: 375px){
+@media only screen and (max-width: 600px) and (min-width: 320px){
     body{
         background-image: url(/images/header_logo.png);
          height: 100%;
