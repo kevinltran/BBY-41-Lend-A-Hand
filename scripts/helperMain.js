@@ -88,12 +88,6 @@ function initMap() {
     }
 }
 
-// Adds notification anchor tag at bottom of the page.
-function notifications() {
-    let notifications = $("<a href='helperNotifications.html'>View notifications</a>");
-    $("body").append(notifications);
-}
-notifications();
 
 // Dynamically creates bootstrap cards for each user in range.
 function createCard(doc, user) {
