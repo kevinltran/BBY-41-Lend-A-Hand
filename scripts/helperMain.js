@@ -1,8 +1,13 @@
 var map, infoWindow;
 var rad;
+let info = document.getElementById("info");
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -34.397, lng: 150.644 },
+        center: {
+            lat: -34.397,
+            lng: 150.644
+        },
         zoom: 10
     });
     infoWindow = new google.maps.InfoWindow;
@@ -24,18 +29,21 @@ function initMap() {
             infoWindow.open(map);
             map.setCenter(pos);
 
+            // Creates radius around marker.
+            var circle = new google.maps.Circle({
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35,
+                map: map,
+                center: pos,
+                radius: rad
+            })
+
             btn.onclick = function () {
                 rad = distance.value * 1000;
-                var circle = new google.maps.Circle({
-                    strokeColor: '#FF0000',
-                    strokeOpacity: 0.8,
-                    strokeWeight: 2,
-                    fillColor: '#FF0000',
-                    fillOpacity: 0.35,
-                    map: map,
-                    center: pos,
-                    radius: rad
-                })
+                circle.setRadius(rad);
 
                 //Calcuates distance between helper and helpee
                 var directionsService = new google.maps.DirectionsService();
@@ -63,24 +71,14 @@ function initMap() {
                                                     if (!directionsData) {
                                                         window.alert('Directions request failed');
                                                         return;
-                                                    }
-                                                    else if (directionsData.distance.value <= rad) {
+                                                    } else if (directionsData.distance.value <= rad) {
                                                         console.log(doc.data().name + directionsData.distance.text);
-                                                        let info = document.getElementById("info");
-                                                        let name = doc.data().name;
-                                                        let link = document.createElement("button");
-                                                        let br = document.createElement("br");
-                                                        link.innerHTML = name;
-                                                        link.setAttribute("onclick", "viewInfo(" + JSON.stringify(doc.id) + "," + JSON.stringify(user.uid) + ")");
-                                                        info.append(link);
-                                                        info.append(br);            
+                                                        createCard(doc, user);
                                                     }
                                                 }
                                             });
                                     }
                                 })
-                                let notifications = $("<a href='helperNotifications.html'>View notifications</a>");
-                                $("body").append(notifications);  
                             })
                         })
                     }
@@ -90,69 +88,49 @@ function initMap() {
     }
 }
 
-/*function viewHelpees() {
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        let info = document.getElementById("info");
-        let helpees = db.collection("users").where("role", "==", "helpee");
-        helpees.get().then(function (list) {
-          list.forEach(function (doc) {
-            let name = doc.data().name;
-            let link = document.createElement("button");
-            let br = document.createElement("br");
-            link.innerHTML = name;
-            link.setAttribute("onclick", "viewInfo(" + JSON.stringify(doc.id) + "," + JSON.stringify(user.uid) + ")");
-            info.append(link);
-            info.append(br);
-          });
-        });
-  
-        // delete next 2 lines to remove "View notifications" anchor
-        let notifications = $("<a href='helperNotifications.html'>View notifications</a>");
-        $("body").append(notifications);
-      }
-      else {
-        console.log("not logged in");
-      }
-    });
-  }*/
+// Adds notification anchor tag at bottom of the page.
+function notifications() {
+    let notifications = $("<a href='helperNotifications.html'>View notifications</a>");
+    $("body").append(notifications);
+}
+notifications();
 
-
-/*function createCard(helpee) {
+// Dynamically creates bootstrap cards for each user in range.
+function createCard(doc, user) {
+    document.getElementById("help").innerHTML = "These people are in your area and need some help!";
+    document.getElementById("moreInfo").innerHTML= "Click on the cards to see more info.";
+    let col = document.createElement('div');
+    col.className = "col-xs-6 col-sm-6 col-md-4 col-lg-3";
     let card = document.createElement('div');
-    card.className = "card";
+    card.className = "card text-white border-primary bg-info mb-3";
     card.style.width = "18rem";
     card.style.margin = "auto";
     card.style.marginTop = "10px";
-    let img = document.createElement("img");
-    img.className = "card-img-top";
-    img.src = "";
-    img.style.width = "100%";
-    img.style.height = "10vw";
-    img.style.objectFit = "cover";
+    let header = document.createElement('div');
+    header.className = "card-header";
+    let headerName = document.createTextNode(doc.data().name);
+    header.appendChild(headerName);
     let cardBody = document.createElement('div');
-    cardBody.class = "card-body";
+    cardBody.className = "card-body";
+    cardBody.style.height = "10rem";
+    cardBody.style.overflow = "hidden";
     let title = document.createElement('h5');
     title.className = "card-title";
-    let textName = document.createTextNode(helpee.data().name);
+    let textName = document.createTextNode("A little about this person!");
     title.appendChild(textName);
-    //let cardText = document.createElement('p');
-    //cardText.className = "card-text";
-    //let description = document.createTextNode(helpee.data().description);
-    //cardText.appendChild(description);
+    let cardText = document.createElement('p');
+    cardText.className = "card-text";
+    let description = document.createTextNode(doc.data().description);
+    cardText.appendChild(description);
     let viewHelpee = document.createElement('a');
-    viewHelpee.className = "align-self-end btn btn-primary btn-block";
-    viewHelpee.href = "helpeeProfile.html?" + helpee.id;
-    let text = document.createTextNode("View Helpee");
-    viewHelpee.appendChild(text);
+    viewHelpee.className = "align-self-end btn stretched-link";
+    viewHelpee.setAttribute("onclick", "viewInfo(" + JSON.stringify(doc.id) + "," + JSON.stringify(user.uid) + ")");
+    viewHelpee.setAttribute("href", "#popup");
     cardBody.appendChild(title);
-    //cardBody.appendChild(description);
+    cardBody.appendChild(description);
     cardBody.appendChild(viewHelpee);
-    img.appendChild(cardBody);
-    card.appendChild(img);
+    card.appendChild(header);
     card.appendChild(cardBody);
-    let t = document.createTextNode("These people are near you and need your help!");
-    document.getElementById("nearYou").innerHTML = "These people are near you and need your help!";
-    document.getElementsByClassName("card-columns")[0].appendChild(card);
-}*/
-
+    col.appendChild(card);
+    document.getElementsByClassName("row")[0].appendChild(col);
+}

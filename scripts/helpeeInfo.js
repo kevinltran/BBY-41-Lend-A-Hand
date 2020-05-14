@@ -1,3 +1,4 @@
+let displaying = false;
 function viewInfo(id, userId) {
   let popup = document.getElementById("popup");
   db.collection("users").get().then(function (xlist) {
@@ -24,9 +25,10 @@ function viewInfo(id, userId) {
       }
     })
   });
-  if (popup.style.display === "none") {
+  if (popup.style.display === "none" && !displaying) {
     popup.style.display = "block";
+    displaying = true;
   } else {
-    popup.style.display = "none";
+    displaying = false;
   }
 }

@@ -5,4 +5,11 @@
 
   body{
     margin: 1vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    background-color: #f7fbfe;
+  }
+
+  html{
+    scroll-behavior: smooth;
   }
