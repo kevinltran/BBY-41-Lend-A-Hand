@@ -8,8 +8,4 @@ function removeNotification(id) {
       window.location.reload();
     })
   })
-
-  //delete next 2 lines to remove "View helpees" anchor
-  let viewHelpees = $("<a href='viewHelpees.html'>View helpees</a>");
-  $("body").append(viewHelpees);
 }

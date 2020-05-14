@@ -180,13 +180,16 @@ function checkLogIn() {
     if (user) {
       db.collection("users").doc(user.uid).get().then(function (snap) {
         if (snap.data().role == "helper") {
-          document.getElementById('home').setAttribute('href', '../Views/helperProfile.html');
+          document.getElementsByClassName('home')[0].setAttribute('href', '../Views/helperProfile.html');
+          document.getElementsByClassName('home')[1].setAttribute('href', '../Views/helperProfile.html');
         } else {
-          document.getElementById('home').setAttribute('href', '../Views/helpeeProfile.html');
+          document.getElementsByClassName('home')[0].setAttribute('href', '../Views/helpeeProfile.html');
+          document.getElementsByClassName('home')[1].setAttribute('href', '../Views/helpeeProfile.html');
         }
       })
     } else {
-      document.getElementById('home').setAttribute('href', '../index.html');
+      document.getElementsByClassName('home')[0].setAttribute('href', '../index.html');
+      document.getElementsByClassName('home')[1].setAttribute('href', '../index.html');
     }
   })
 }

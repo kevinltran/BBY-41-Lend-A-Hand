@@ -9,4 +9,5 @@ function sendRequest(id, userId) {
       }
     });
   });
+  window.alert("Request sent");
 }
