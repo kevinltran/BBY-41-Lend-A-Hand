@@ -1,29 +1,38 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <<<<<<< HEAD <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    =======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/images/goodFavicon.ico" type="image/x-icon">
+    >>>>>>> 9b1dff81fdc30218084b6af06db5409dcfe1b86f
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="shortcut icon" href="/images/goodFavicon.ico" type="image/x-icon">
-  <link href="../About Us/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../About Us/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="../About Us/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../About Us/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="../About Us/assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="../About Us/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/images/goodFavicon.ico" type="image/x-icon">
+    <link href="../About Us/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../About Us/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../About Us/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../About Us/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../About Us/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../About Us/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="../About Us/assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/profilePages.css">
+    <!-- Template Main CSS File -->
+    <link href="../About Us/assets/css/style.css" rel="stylesheet">
+    <<<<<<< HEAD <link rel="stylesheet" href="../css/profilePages.css">
+      =======
+      <link rel="stylesheet" href="../css/request.css">
+      >>>>>>> 9b1dff81fdc30218084b6af06db5409dcfe1b86f
 </head>
 
 <body>
@@ -31,7 +40,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1><a>Help Requests</a></h1>
+        <h1><a>My Profile Page</a></h1>
 
       </div>
 
@@ -39,9 +48,8 @@
         <ul>
           <!--<li class="active"><a id="home">Home</a></li> -->
 
-          <li><a href="/Views/updateList.html">My Profile Page</a></li>
-          <li><a href="/Views/requests.html">Item List</a></li>
-
+          <li><a href="/Views/helpeeProfile.html">My Proflie Page</a></li>
+          <li><a href="/Views/updateList.html">Item List</a></li>
           <li><a href="/About Us/index.html">About Us</a></li>
 
         </ul>
@@ -57,7 +65,11 @@
     </div>
   </header><!-- End Header -->
 
-  <!--Bootstrap, Firebase and Google Maps API etc -->
+
+  <div id="requests">
+
+  </div>
+
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
@@ -79,14 +91,18 @@
     </script>
 
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../scripts/helperProfile.js"></script>
+  <script src="../About Us/assets/js/main.js"></script>
+  <!-- <script src="../scripts/helperProfile.js"></script> -->
   <script src="../scripts/getRequests.js"></script>
   <script src="../scripts/acceptRequest.js"></script>
   <script src="../scripts/refuseRequest.js"></script>
-  <script src="../About Us/assets/js/main.js"></script>
   <script>getRequests();</script>
 
 </body>
+
 
 </html>
