@@ -57,14 +57,6 @@ function showProfile() {
 
 
 
-document.getElementById("clicked1").onclick = function () {
-    window.location.href = "updateList.html"
-}
-
-document.getElementById("clicked2").onclick = function () {
-    window.location.href = "requests.html"
-}
-
 
 
 var addressID;
@@ -161,23 +153,6 @@ document.getElementById("edit4").onclick = function () {
 
 }
 
-document.getElementById("bio").onclick = function () {
-    //creates a textbox
-    var x = document.createElement("INPUT");
-    x.setAttribute("type", "text");
-    bioID = x.id = "newBio";
-  
-
-    //creates an update button
-    var save = document.createElement("BUTTON");
-    save.innerHTML = "Update";
-    save.onclick = update4;
-
-    document.getElementById("bio").append(x, save);
-
-    document.getElementById("bio").style.display = "none";
-
-}
 
 
 

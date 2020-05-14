@@ -2,17 +2,58 @@
 <html lang="en">
 
 <head>
-  <title>Edit Profile</title>
+  <title>My Item List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../css/updateList.css" />
-  <link rel="shortcut icon" href="/images/goodFavicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../goodFavicon.ico" type="image/x-icon">
 
+   <!-- Vendor CSS Files -->
+   <link href="../About Us/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../About Us/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+   <link href="../About Us/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="../About Us/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+   <link href="../About Us/assets/vendor/venobox/venobox.css" rel="stylesheet">
+   <link href="../About Us/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+   
+   <!-- Template Main CSS File -->
+   <link href="../About Us/assets/css/style.css" rel="stylesheet">
+   <link rel="stylesheet" href="../css/updateList.css" />
 </head>
 
 <body>
 
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <h1><a>My Item List</a></h1>
+
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="/Views/helpeeProfile.html">Home</a></li>
+
+          <li class="active"><a href="/Views/updateList.html">Item List</a></li>
+          <li><a href="/Views/requests.html">Requests</a></li>
+
+          <li><a href="/About Us/index.html">About Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <!-- <div class="header-social-links">
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div> -->
+
+    </div>
+  </header><!-- End Header -->
+
   <div>
-    <div id="header">
+    <div id="header2">
       <h1>Your Item List</h1>
     </div>
 
@@ -46,7 +87,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../scripts/firebase.js"></script>
   <script src="../scripts/updateList.js"></script>
-
+  <script src="../About Us/assets/js/main.js"></script>
 
   <script>getItem();</script>
 
