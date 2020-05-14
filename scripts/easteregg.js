@@ -8,6 +8,7 @@ const corn = document.getElementById("corndiv");
 const tp = document.getElementById("tpdiv");
 const oranges = document.getElementById("orangesdiv");
 const lettuce = document.getElementById("lettucediv");
+const msg = document.getElementById("congrats");
 
 // Hides the main content on the about us index page
 const hideAnim = {
@@ -30,10 +31,17 @@ const showItem = {
 // String "Password" for easter egg activation
 let string = "";
 
+// Stores booleans for easter egg hunt
+let foundCorn = false;
+let foundLettuce = false;
+let foundTp = false;
+let foundOrange = false;
+
 // UI and css for easter egg content
 $("#bag").hide();
+$("#congrats").hide();
 $("#bag").css("transform", "translate(0px, 70px)");
-$("#bag").css("height", "100vh");
+$("#bag").css("height", "93.5vh");
 $("#cornimg").hide();
 $("#orangeimg").hide();
 $("#tpimg").hide();
@@ -50,7 +58,7 @@ $("#orangesdiv").css("bottom", "10px");
 $("#tpdiv").css("right", "22px");
 $("#tpdiv").css("bottom", "222px");
 
-// Event handlers for clicking on div pictures
+// Event handlers for clicking on divs
 
 rob.onclick = function () {
   string += "a";
@@ -76,6 +84,10 @@ oves.onclick = function () {
   startGame();
 }
 
+msg.onclick = function () {
+  window.location.reload();
+}
+
 // "Starts" the hunt once password is inputted
 function startGame() {
   if (string.includes("cabd")) {
@@ -88,16 +100,38 @@ function startGame() {
 
 corn.onclick = function () {
   $("#cornimg").show(showItem);
+  $("#cornp").hide(hideAnim);
+  foundCorn = true;
+  congrats();
 }
 
 oranges.onclick = function () {
   $("#orangeimg").show(showItem);
+  $("#orangesp").hide(hideAnim);
+  foundOrange = true;
+  congrats();
 }
 
 lettuce.onclick = function () {
   $("#lettuceimg").show(showItem);
+  $("#lettucep").hide(hideAnim);
+  foundLettuce = true;
+  congrats();
 }
 
 tp.onclick = function () {
   $("#tpimg").show(showItem);
+  $("#tpp").hide(hideAnim);
+  foundTp = true;
+  congrats();
+}
+
+function congrats() {
+  if (foundCorn && foundOrange && foundLettuce && foundTp) {
+    $("#cornimg").hide(hideAnim);
+    $("#orangeimg").hide(hideAnim);
+    $("#lettuceimg").hide(hideAnim);
+    $("#tpimg").hide(hideAnim);
+    $("#congrats").show(showAnim);
+  }
 }
