@@ -71,9 +71,23 @@ var addressID;
 var cityID;
 var postCodeID;
 var phoneID;
+var bioID;
+
+document.getElementById("edit5").onclick = function () {
+    //creates a textbox
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    bioID = x.id = "newBio"
 
 
+    //creates an update button
+    var save = document.createElement("BUTTON");
+    save.innerHTML = "Update";
+    save.onclick = update5;
 
+    document.getElementById("bio").append(x, save);
+    document.getElementById("edit5").style.display = "none";
+    }
 
 
 document.getElementById("edit1").onclick = function () {
@@ -147,6 +161,24 @@ document.getElementById("edit4").onclick = function () {
 
 }
 
+document.getElementById("bio").onclick = function () {
+    //creates a textbox
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    bioID = x.id = "newBio";
+  
+
+    //creates an update button
+    var save = document.createElement("BUTTON");
+    save.innerHTML = "Update";
+    save.onclick = update4;
+
+    document.getElementById("bio").append(x, save);
+
+    document.getElementById("bio").style.display = "none";
+
+}
+
 
 
 function update1() {
@@ -198,6 +230,16 @@ function update4() {
     setTimeout(function () { window.location.reload(); }, 500);
 
 }
-
+function update5() {
+    console.log(bioID);
+    firebase.auth().onAuthStateChanged(function (user) {
+        newBio = document.getElementById(bioID).value;
+        db.collection("users").doc(user.uid).update({
+            description: newBio
+        })
+        console.log('success')
+    })
+    setTimeout(function () { window.location.reload(); }, 200);
+}
 
 showProfile();
