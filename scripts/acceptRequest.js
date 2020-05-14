@@ -1,3 +1,5 @@
+
+
 function acceptRequest(id) {
   console.log("accepted request");
   firebase.auth().onAuthStateChanged(function (user) {

@@ -23,6 +23,7 @@ function getRequests() {
       });
     }
     )
-    $("body").append(list);
+    $(list).css("transform", "translate(0px, 70px)");
+    $("#requests").append(list);
   })
 }
