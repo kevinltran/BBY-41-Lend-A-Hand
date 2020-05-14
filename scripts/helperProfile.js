@@ -207,9 +207,7 @@ var bioID;
         setTimeout(function () { window.location.reload(); }, 200);
 
     }
-    document.getElementById("map").onclick = function () {
-        window.location.href = "helperMain.html"
-    }
+  
 
     function update5() {
         console.log(bioID);
@@ -222,9 +220,6 @@ var bioID;
         })
         setTimeout(function () { window.location.reload(); }, 200);
 
-    }
-    document.getElementById("map").onclick = function () {
-        window.location.href = "helperMain.html"
     }
 
 

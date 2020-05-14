@@ -1,4 +1,3 @@
-
 <html lang="en">
 
 <head>
@@ -6,71 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+  <link rel="shortcut icon" href="../goodFavicon.ico" type="image/x-icon">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../About Us/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../About Us/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../About Us/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../About Us/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../About Us/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../About Us/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="../About Us/assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/profilePages.css" />
-  <link rel="shortcut icon" href="/images/goodFavicon.ico" type="image/x-icon">
 
 </head>
 
 <body>
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
 
-<div>
-  <div class="profileImg">
-    <img src="../images/lady.jpg" alt="helpee">
-    <div class="container">
-    <p id = "bio">Description</p>
-    <article id = "editBio"></article><button id = "edit5">Edit</button></article>
+      <div class="logo mr-auto">
+        <h1><a>My Profile Page</a></h1>
+
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/Views/helpeeProfile.html">Home</a></li>
+
+          <li><a href="/Views/updateList.html">Item List</a></li>
+          <li><a href="/Views/requests.html">Requests</a></li>
+
+          <li><a href="/About Us/index.html">About Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <!-- <div class="header-social-links">
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div> -->
+
     </div>
-</div>
+  </header><!-- End Header -->
+  <div id = "test">
+    <div class="profileImg">
+      <img src="../images/lady.jpg" alt="helpee">
+      <div class="container">
+        <p id="bio">Description</p>
+        <article id="editBio"></article><button id="edit5">Edit</button></article>
+      </div>
+    </div>
 
 
-<div class = "flex-container">
-  <section>
-    <article id = "userName"><h5><strong>NAME</strong></h5></article>
-    <article><p id="name"></p></article>
-    <article></article>
-  </section>
+    <div class="flex-container">
+      <section>
+        <article id="userName">
+          <h5><strong>NAME</strong></h5>
+        </article>
+        <article>
+          <p id="name"></p>
+        </article>
+        <article></article>
+      </section>
 
 
-  <section>
-    <article id = "userEmail"><h5><strong>EMAIL</strong></h5></article>
-    <article><p id="email"></p></article>
-    <article></article>
-  </section>
+      <section>
+        <article id="userEmail">
+          <h5><strong>EMAIL</strong></h5>
+        </article>
+        <article>
+          <p id="email"></p>
+        </article>
+        <article></article>
+      </section>
 
 
-  <section>
-    <article id = "userAddress"><h5><strong>ADDRESS</strong></h5></article>
-    <article><p id="address"></p></article>
-    <article id = "editAddress"><button id = "edit1">Edit</button></article>
-  </section>
+      <section>
+        <article id="userAddress">
+          <h5><strong>ADDRESS</strong></h5>
+        </article>
+        <article>
+          <p id="address"></p>
+        </article>
+        <article id="editAddress"><button id="edit1">Edit</button></article>
+      </section>
 
 
-  <section>
-    <article id = "userCity"><h5><strong>CITY</strong></h5></article>
-    <article><p id="city"></p></article>
-    <article id = "editCity"><button id = "edit2">Edit</button></article>
-  </section>
+      <section>
+        <article id="userCity">
+          <h5><strong>CITY</strong></h5>
+        </article>
+        <article>
+          <p id="city"></p>
+        </article>
+        <article id="editCity"><button id="edit2">Edit</button></article>
+      </section>
 
 
-  <section>
-    <article id = "userCode"><h5><strong>POSTAL CODE</strong></h5></article>
-    <article><p id="postCode"></p></article>
-    <article id = "editCode"><button id = "edit3">Edit</button></article>
-  </section>
+      <section>
+        <article id="userCode">
+          <h5><strong>POSTAL CODE</strong></h5>
+        </article>
+        <article>
+          <p id="postCode"></p>
+        </article>
+        <article id="editCode"><button id="edit3">Edit</button></article>
+      </section>
 
 
-  <section>
-    <article id = "userPhone"><h5><strong>PHONE NUMBER</strong></h5></article>
-    <article><p id="phone"></p></article>
-    <article id = "editNumber"><button id = "edit4">Edit</button></article>
-  </section>
-</div>
+      <section>
+        <article id="userPhone">
+          <h5><strong>PHONE NUMBER</strong></h5>
+        </article>
+        <article>
+          <p id="phone"></p>
+        </article>
+        <article id="editNumber"><button id="edit4">Edit</button></article>
+      </section>
+    </div>
 
 
-<div id = "button">
-  <button id="clicked1">Item List</button>
-  <button id="clicked2">Requests</button>
-</div>
 
 
 </body>
@@ -85,6 +147,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../scripts/firebase.js"></script>
 <script src="../scripts/helpeeProfile.js"></script>
+<script src="../About Us/assets/js/main.js"></script>
 <!--<script src="../scripts/requests.js"></script>
 <script>request();</script> bro idek where this exists-->
 

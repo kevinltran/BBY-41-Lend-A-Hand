@@ -1,32 +1,44 @@
+#title{
+  grid-area: header;
+  text-align: center;
+}
+
 div#number{
   display: grid;
-  grid-template-columns:  2fr 1fr
+  grid-template-columns:  2fr 1fr;
+  font-size: 25px;
 }
 
 div#bio{
   display: grid;
-  grid-template-columns:  2fr 1fr
+  grid-template-columns:  2fr 1fr;
+  font-size: 25px;
 }
 
 div#profilePic{
-  padding-bottom: 6vh;
+padding-bottom: 6vh;
 padding-top:1vh;
+font-size: 25px;
+
 }
 
 div#address{
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  font-size: 25px;
 }
 
 
 div#city1{
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  font-size: 25px;
 }
 
 div#postalCode{
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  font-size: 25px;
 }
 
 #cityOuter{
@@ -43,18 +55,12 @@ div#postalCode{
 }
 
 #numberOuter{
-  padding-top: 2vh;
+  padding-top: 1vh;
   padding-bottom: 1vh;
 }
 
 
-#emailAddress{
-  padding-bottom: 4vh;
-}
-
 div#confirm{
-
-  padding-top:5vh;
   margin: 0;
   position: absolute;
   left: 48%;
@@ -63,28 +69,14 @@ div#confirm{
 }
 
 
-
-#fname{
-  padding-bottom: 4vh;
-  padding-top: 2vh;
-}
-
-#header {
-  overflow-x: hidden;
-  text-align: center;
-  background-color: tomato;
-  display: block;
-}
 html, body {
   overflow-x: hidden;
   max-width: 100%;
   max-height: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 
-h1 {
-  font-size: 3.5vmax;
-  font-weight: bold;
-}
+
 
 #form {
   overflow-x: hidden;
@@ -92,6 +84,9 @@ h1 {
   font-size: 20pt;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
 
 
 input {
@@ -168,6 +163,7 @@ input[type=submit] {
   left:0;
   
 }
+
 
 /* CSS animation */
 

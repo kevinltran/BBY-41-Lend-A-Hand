@@ -7,20 +7,24 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../css/createProfile.css" />
   <link rel="shortcut icon" href="/images/goodFavicon.ico" type="image/x-icon">
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 </head>
 
 <body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
 
-  <div id='header'>
-    <h1>Create A Profile</h1>
-  </div>
+      <div class="logo mr-auto">
+        <h1 id = "title"><a href="/index.html">CONFIRM PROFILE DETAILS</a></h1>
+      </div>
+
 
   <div id='form'>
 
     <form>
-      <!-- <div id="fname">
+       <!-- <div id="fname">
         <label for='name'>Confirm Full Name:</label>
         <input id='name' type="text" placeholder="Enter Full Name" required="required" /></div>
 
@@ -29,53 +33,54 @@
           <label for='email'>Confirm Email:</label>
           <input id='email' type="text" placeholder="Enter an email" required="required" /></div> -->
 
-      <div id="addressOuter">
-        <div id="address"><label for='addressInput'>Address:</label>
-          <div class="help-tip">
-            <p>Your address will only be displayed to providers that you accept requests from.</p>
+          <div id="addressOuter">
+            <div id="address"><label for='addressInput'>Address:</label>
+              <div class="help-tip">
+                <p>Your address will only be displayed to providers that you accept requests from.</p>
+              </div>
+            </div>
+
+            <input id='addressInput' type="text" placeholder="Enter Address" required="required" />
+
           </div>
-        </div>
-
-        <input id='addressInput' type="text" placeholder="Enter Address" required="required" />
-
-      </div>
 
 
-      <div id="cityOuter">
-        <div id="city1"><label for='city' required="required">City:</label>
-          <div class="help-tip">
-            <p>Your address will only be displayed to providers that you accept requests from.</p>
+          <div id="cityOuter">
+            <div id="city1"><label for='city' required="required">City:</label>
+              <div class="help-tip">
+                <p>Your address will only be displayed to providers that you accept requests from.</p>
+              </div>
+            </div>
+
+            <input id='city' type="text" placeholder="Enter Address" required="required" />
+
           </div>
-        </div>
-
-        <input id='city' type="text" placeholder="Enter Address" required="required" />
-
-      </div>
 
 
-      <div id="postalCodeOuter">
-        <div id="postalCode"><label for='postCode'>Postal-Code:</label>
-          <div class="help-tip">
-            <p>Your address will only be displayed to providers that you accept requests from.</p>
+          <div id="postalCodeOuter">
+            <div id="postalCode"><label for='postCode'>Postal-Code:</label>
+              <div class="help-tip">
+                <p>Your address will only be displayed to providers that you accept requests from.</p>
+              </div>
+            </div>
+
+            <input id='postCode' type="text" placeholder="Enter Address" required="required" />
+
           </div>
-        </div>
-
-        <input id='postCode' type="text" placeholder="Enter Address" required="required" />
-
-      </div>
 
 
 
-      <div id=numberOuter>
-        <div id="number">
-          <label for='phone'>Phone Number:</label>
-          <div class="help-tip">
-            <p>Your number will only be shared with providers that you accept requests from.</p>
+          <div id=numberOuter>
+            <div id="number">
+              <label for='phone'>Phone Number:</label>
+              <div class="help-tip">
+                <p>Your number will only be shared with providers that you accept requests from.</p>
+              </div>
+            </div>
+
+            <input id='phone' type="text" placeholder="Enter Phone Number" required="required" />
           </div>
-        </div>
 
-        <input id='phone' type="text" placeholder="Enter Phone Number" required="required" />
-      </div>
 
       <div id=bioOuter>
         <div id="bio">
@@ -88,28 +93,28 @@
         <input id='userBio' type="text" placeholder="Describe yourself" required="required" />
       </div>
 
-      <div id="profilePic">
-        <form>
-          <div class="form-group">
-            <label id="image" for="exampleFormControlFile1">Photo (Optional)</label>
+          <div id="profilePic">
+            <form>
+              <div class="form-group">
+                <label id="image" for="exampleFormControlFile1">Photo (Optional)</label>
 
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+            </form>
           </div>
-        </form>
+
+          <div id ="confirm">
+            <input id="clicked" type="button" value="Confirm Details"></div>
       </div>
 
-      <div id ="confirm">
-        <input id="clicked" type="button" value="Confirm Details"></div>
-  </div>
-
-  </form>
+    </form>
   </div>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <script src="../scripts/firebase.js"></script>
-  <script src="../scripts/createHelpee.js"></script>
+  <script src = "../scripts/firebase.js"></script>
+  <script src = "../scripts/createHelper.js"></script>
 </body>
 
 </html>
