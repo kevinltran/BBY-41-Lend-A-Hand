@@ -61,14 +61,14 @@ div#postalCode{
 }
 
 
-div#confirm{
+/* div#confirm{
   margin: 0;
   position: absolute;
   left: 48%;
   -ms-transform: translateX(-50%, -50%);
   transform: translate(-50%, -50%);
   padding-bottom: 3.5vh;
-}
+} */
 
 
 html, body {
