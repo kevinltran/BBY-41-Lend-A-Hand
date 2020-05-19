@@ -45,6 +45,11 @@ function initMap() {
                 rad = distance.value * 1000;
                 circle.setRadius(rad);
 
+                let cards = document.getElementsByClassName('row')[0];
+                while(cards.firstChild){
+                    cards.removeChild(cards.lastChild);
+                }
+
                 //Calcuates distance between helper and helpee
                 var directionsService = new google.maps.DirectionsService();
                 firebase.auth().onAuthStateChanged(function (user) {
@@ -72,7 +77,7 @@ function initMap() {
                                                         window.alert('Directions request failed');
                                                         return;
                                                     } else if (directionsData.distance.value <= rad) {
-                                                        console.log(doc.data().name + directionsData.distance.text);
+                                                        console.log(doc.data().name + " " + directionsData.distance.text);
                                                         createCard(doc, user);
                                                     }
                                                 }

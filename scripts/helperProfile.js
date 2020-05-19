@@ -87,6 +87,7 @@ var bioID;
         //creates a textbox
         var x = document.createElement("INPUT");
         x.setAttribute("type", "text");
+        //document.getElementById("edit1").replaceWith(x);
         addressID = x.id = "newAddress"
 
 
@@ -94,9 +95,11 @@ var bioID;
         var save = document.createElement("BUTTON");
         save.innerHTML = "Update";
         save.onclick = update1;
+        document.getElementById("edit1").replaceWith(x, save);
+        //document.getElementById("newAddress").append(save);
 
-        document.getElementById("address").append(x, save);
-        document.getElementById("edit1").style.display = "none";
+        //document.getElementById("address").append(x, save);
+        //document.getElementById("edit1").style.display = "none";
 
     }
 
