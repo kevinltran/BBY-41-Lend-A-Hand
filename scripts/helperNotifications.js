@@ -36,6 +36,12 @@ function getNotifications() {
         })
       }
       )
+<<<<<<< HEAD
+=======
+      //css
+      // try again
+      $(div).css("transform", "translate(0px, 70px)");
+>>>>>>> c126438fcb8d544dec6b444b56a10928a4a118ed
       $("body").append(div);
     }
   })
