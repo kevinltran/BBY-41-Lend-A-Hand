@@ -146,6 +146,7 @@ var bioID;
         //creates an update button
         var save = document.createElement("BUTTON");
         save.innerHTML = "Update";
+
         save.onclick = update4;
 
         document.getElementById("phone").append(x, save);
@@ -167,7 +168,7 @@ var bioID;
             })
             console.log('success')
         })
-        setTimeout(function () { window.location.reload(); }, 200);
+        setTimeout(function () { window.location.reload(); }, 500);
 
     }
     function update2() {
@@ -179,7 +180,7 @@ var bioID;
             })
             console.log('success')
         })
-        setTimeout(function () { window.location.reload(); }, 200);
+        setTimeout(function () { window.location.reload(); }, 500);
 
     }
 
@@ -192,7 +193,7 @@ var bioID;
             })
             console.log('success')
         })
-        setTimeout(function () { window.location.reload(); }, 200);
+        setTimeout(function () { window.location.reload(); }, 500);
 
     }
     function update4() {
@@ -204,7 +205,7 @@ var bioID;
             })
             console.log('success')
         })
-        setTimeout(function () { window.location.reload(); }, 200);
+        setTimeout(function () { window.location.reload(); }, 500);
 
     }
   
@@ -218,7 +219,7 @@ var bioID;
             })
             console.log('success')
         })
-        setTimeout(function () { window.location.reload(); }, 200);
+        setTimeout(function () { window.location.reload(); }, 500);
 
     }
 

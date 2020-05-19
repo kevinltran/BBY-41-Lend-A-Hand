@@ -27,8 +27,9 @@ img{
 section{
     border: 1px solid black;
     padding: 5px;
-    display:flex;
-    justify-content: space-between;
+    display:grid;
+    grid-template-columns: 3fr 3fr 1fr;
+
 }
 
 h1,
@@ -42,6 +43,26 @@ h6 {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* #flex-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+
+
+
+#editAddress{
+  text-align: right;
+}
+#editCity{
+  text-align: right;
+}
+#editCode{
+  text-align: right;
+}
+#editNumber{
+  text-align: right;
 }
 
 
