@@ -39,7 +39,7 @@ function write(phoneNumber, homeAddress, city, postCode) {
        
 
     //puts a delay on the redirect so the data can be written into our database.
-    setTimeout(function () { redirect(); }, 300);
+    setTimeout(function () { redirect(); }, 1000);
 }
 
 //redirects the user to the helper main page.
