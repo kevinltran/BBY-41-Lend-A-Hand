@@ -38,12 +38,9 @@ function getNotifications() {
 
       }
       )
+      //css
       $(div).css("transform", "translate(0px, 70px)");
       $("body").append(div);
     }
   })
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 3c8ff34b9bfe6aacce48b4bb02b8842ec644d334
