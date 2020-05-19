@@ -45,12 +45,16 @@ function initMap() {
                 rad = distance.value * 1000;
                 circle.setRadius(rad);
 
+                // clears the div of all child nodes;
+                // this is a common way of doing this
+                // taken from the internet (can be found in many places) stackoverflow, geeksforgeeks etc.
                 let cards = document.getElementsByClassName('row')[0];
                 while(cards.firstChild){
                     cards.removeChild(cards.lastChild);
                 }
 
                 //Calcuates distance between helper and helpee
+                //Some of this code is taken from google documentation examples
                 var directionsService = new google.maps.DirectionsService();
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
