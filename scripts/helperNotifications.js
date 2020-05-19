@@ -31,7 +31,7 @@ function getNotifications() {
                 p2.innerHTML = "Phone Number:<br/>" + person.data().phone
                 p3.innerHTML = "Email:<br/>" + person.data().email;
                 ul.innerHTML = "<b>List items:</b><br/>";
-                button.innerHTML = "<button onclick='removeNotification(" + JSON.stringify(person.id) + ")'>Done</button>";
+                button.innerHTML = "<button style='color: white; background-color: #34a8eb; border-radius: 13px; border-color: #34a8eb' onclick='removeNotification(" + JSON.stringify(person.id) + ")'>Done</button>";
                 person.data().list.forEach(function (item) {
                   let li = document.createElement("li");
                   li.innerHTML = item;

@@ -14,8 +14,8 @@ function getRequests() {
               //comment this out when finished
               li.innerHTML += '<br/>leon self-note: remember to add profile pictures here too once done<br/>'
               //end of self note
-              li.innerHTML += "&emsp;<button onclick='acceptRequest(" + JSON.stringify(person.id) + ")'>Accept</button>";
-              li.innerHTML += "&emsp;<button onclick='refuseRequest(" + JSON.stringify(person.id) + ")'>Refuse</button>";
+              li.innerHTML += "<button style='color: white; background-color: #34a8eb; border-radius: 13px; border-color: #34a8eb' onclick='acceptRequest(" + JSON.stringify(person.id) + ")'>Accept</button>";
+              li.innerHTML += "&emsp;<button style='color: white; background-color: #2a8dc7; border-radius: 13px; border-color: #2a8dc7' onclick='refuseRequest(" + JSON.stringify(person.id) + ")'>Refuse</button>";
               $(li).css("margin", "1em");
               $(li).css("padding", "1em");
               $(li).css("background-color", "#c5f8fa");
