@@ -60,7 +60,6 @@ function getNotifications() {
           console.log(err);
           console.log("no notifications in database");
         })
-
       }
       )
       // outer div styling
@@ -73,6 +72,7 @@ function getNotifications() {
       $(bigdiv).css("transform", "translate(0px, 70px)");
 
       $("body").append(bigdiv);
+      $("body").append(div);
     }
   })
 }
