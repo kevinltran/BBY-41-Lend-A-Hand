@@ -15,6 +15,7 @@ function getNotifications() {
                 let p2 = document.createElement("p");
                 let ul = document.createElement("ul");
 
+                console.log(person.data().name);
                 h4.innerHTML = person.data().name + "&emsp;<button onclick='removeNotification(" + JSON.stringify(person.id) + ")'>Done</button>";
                 p.innerHTML = "Location:&nbsp;" + person.data().address + ",&nbsp;" + person.data().postalCode + "&nbsp;" + person.data().city;
                 p2.innerHTML = "Contact info:&nbsp;" + person.data().phone + ",&nbsp;" + person.data().email;
@@ -34,8 +35,10 @@ function getNotifications() {
           console.log(err);
           console.log("no notifications in database");
         })
+
       }
       )
+      $(div).css("transform", "translate(0px, 70px)");
       $("body").append(div);
     }
   })
