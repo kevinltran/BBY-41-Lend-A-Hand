@@ -21,7 +21,7 @@ function getNotifications() {
                 person.data().list.forEach(function (item) {
                   let li = document.createElement("li");
                   li.innerHTML = item;
-                  ul.append(li);
+                  div.append(li);
                 })
                 div.append(h4);
                 div.append(p);
@@ -40,3 +40,4 @@ function getNotifications() {
     }
   })
 }
+
