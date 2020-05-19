@@ -39,6 +39,7 @@ function getNotifications() {
       }
       )
       //css
+      // try again
       $(div).css("transform", "translate(0px, 70px)");
       $("body").append(div);
     }
