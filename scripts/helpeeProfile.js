@@ -207,7 +207,7 @@ function update5() {
     })
     console.log('success')
   })
-  setTimeout(function () { window.location.reload(); }, 200);
+  setTimeout(function () { window.location.reload(); }, 500);
 }
 
 showProfile();
