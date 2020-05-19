@@ -13,7 +13,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script>
-        var firebaseConfig = {
+        /**var firebaseConfig = {
             apiKey: "AIzaSyAdQNsdN8jh2Tv1Ot0ADsbRqbzlUMYQXEU",
             authDomain: "lend-a-hand-9861e.firebaseapp.com",
             databaseURL: "https://lend-a-hand-9861e.firebaseio.com/",
@@ -23,7 +23,7 @@
             appId: "1:230477140946:web:f1c6cb4bb6ea0533416e0b"
         };
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);*/
 
         var uploader = document.getElementById("uploader");
         var fileButton = document.getElementById("fileButton");
@@ -58,6 +58,12 @@
 
         });
     </script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="../scripts/firebase.js"></script>
 </body>
 
 
