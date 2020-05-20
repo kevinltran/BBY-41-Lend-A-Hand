@@ -6,6 +6,15 @@ function viewInfo(id, userId) {
       if (doc.id == id) {
         //display doc.data() in pop up div
         popup.innerHTML = "<h2>" + doc.data().name + "</h2><ul>";
+        
+        // db.collection("users").doc(user.uid).get().then(function(snap){
+        //   storageRef.child('profile_pics/' + snap.data().image).getDownloadURL().then(function(url) {
+        //     var img = document.getElementById('profilePic');
+        //     img.src = url;
+        //   }).catch(function(error) {
+        //     // Handle any errors
+        //   });
+        // })
 
         if (doc.data().list != null) {
           doc.data().list.forEach(function (item) {
