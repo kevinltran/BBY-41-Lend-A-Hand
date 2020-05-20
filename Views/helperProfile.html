@@ -28,6 +28,20 @@
 </head>
 
 <body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0">
+  </script>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '1073205286398589',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v7.0'
+      });
+    };
+  </script>
+
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
@@ -58,9 +72,9 @@
   </header><!-- End Header -->
 
 
-
+<div id="userInfo">
   <div class="profileImg">
-    <img src="../images/ryan.jpg" alt="helper">
+    <img src="" alt="helper" id="profilePic">
     <div class="container">
       <p id="bio">Description</p>
       <article id="editBio"></article><button id="edit5">Edit</button></article>
@@ -135,27 +149,32 @@
     </section>
   </div>
 
+  <div class="fb-share-button" data-href="https://lend-a-hand-9861e.web.app/About%20Us/index.html"
+    data-layout="button_count" data-size="large"><a target="_blank"
+      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flend-a-hand-9861e.web.app%2FAbout%2520Us%2Findex.html&amp;src=sdkpreparse"
+      class="fb-xfbml-parse-ignore">Share</a></div>
+
+</div>
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
   <!--Bootstrap, Firebase and Google Maps API etc -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> <!-- Added this for storage -->
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script> <!--Added this for storage-->
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src="../scripts/firebase.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-
-  <!--<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdQNsdN8jh2Tv1Ot0ADsbRqbzlUMYQXEU&callback=initMap">
-    </script>-->
-
+  </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../scripts/helperProfile.js"></script>

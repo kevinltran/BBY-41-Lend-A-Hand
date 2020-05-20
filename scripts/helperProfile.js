@@ -1,8 +1,19 @@
+var storageRef = storage.ref();
+
 //handle error for blank fields
 function showProfile() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             console.log(user.uid)
+
+            db.collection("users").doc(user.uid).get().then(function(snap){
+                storageRef.child('profile_pics/' + snap.data().image).getDownloadURL().then(function(url) {
+                  var img = document.getElementById('profilePic');
+                  img.src = url;
+                }).catch(function(error) {
+                  // Handle any errors
+                });
+              })
 
             db.collection('users').doc(user.uid).get().then(function (snap) {
                 document.getElementById("name").innerHTML = snap.data().name;
