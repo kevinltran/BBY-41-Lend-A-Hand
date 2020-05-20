@@ -23,7 +23,7 @@
 
   <div id='form'>
 
-    <form action="/action_page.php">
+    <form>
        <!-- <div id="fname">
         <label for='name'>Confirm Full Name:</label>
         <input id='name' type="text" placeholder="Enter Full Name" required="required" /></div>
@@ -94,13 +94,9 @@
       </div>
 
           <div id="profilePic">
-            <form>
-              <div class="form-group">
-                <label id="image" for="exampleFormControlFile1">Photo (Optional)</label>
+            <progress value="0" max="100" id="uploader">0%</progress>
+    <input type="file" value="upload" id="fileButton" />
 
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-            </form>
           </div>
 
           <div id ="confirm">
