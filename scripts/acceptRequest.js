@@ -23,6 +23,6 @@ function accepted(id) {
     // alert and reload
     setTimeout(function () {
       if (!alert('Request accepted! Notification sent')) { window.location.reload(); }
-    }, 200);
+    }, 500);
   })
 }
