@@ -1,25 +1,32 @@
-     //Gets file name by getting everything after \\
-    //  function getFile(filePath) {
-    //     return filePath.substr(filePath.lastIndexOf('\\') + 1);
-    // }
-    // fileUpload.addEventListener('change', function (evt) {
-    //     reference = getFile(imageIn.value);
-    //     storageRef = firebase.storage().ref(reference);
-    //     firstFile = evt.target.files[0] // upload the first file only
-    // })
+var uploader = document.getElementById("uploader");
+var fileButton = document.getElementById("fileButton");
+
+fileButton.addEventListener('change', function (e) {
+  //get File
+  var file = e.target.files[0];
+
+  // Create a storage ref
+  var storageRef = firebase.storage().ref('profile_pics/' + file.name);
+
+  //Upload File
+  var task = storageRef.put(file);
 
 
-
-
-    var storageRef = firebase.storage().ref();
-
-      document.getElementById("clicked").onclick = function () {
+  // Update Bar
+  task.on('state_changed',
+      function progress(snapshot) {
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          uploader.value = percentage;
+      }, 
       
-      
-        var file = document.getElementById("imageIn");
-        console.log(typeof file);
-        storageRef.put(file).then(function(snapshot) {
-            console.log('Uploaded a blob or file!');
-          });
+      function error(err) {
+
+      },
+     
+      function complete() {
 
       }
+
+  );
+
+});

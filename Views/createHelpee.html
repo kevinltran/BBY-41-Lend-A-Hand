@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="/images/goodFavicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -18,6 +19,8 @@
 
       <div class="logo mr-auto">
         <h1 id = "title"><a href="/index.html">CONFIRM PROFILE DETAILS</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/header_logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
 
@@ -40,19 +43,19 @@
               </div>
             </div>
 
-            <input id='addressInput' type="text" placeholder="Enter Address" required>
+            <input id='addressInput' type="text" placeholder="Enter Address" required="required" />
 
           </div>
 
 
           <div id="cityOuter">
-            <div id="city1"><label for='city'>City:</label>
+            <div id="city1"><label for='city' required="required">City:</label>
               <div class="help-tip">
                 <p>Your address will only be displayed to providers that you accept requests from.</p>
               </div>
             </div>
 
-            <input id='city' type="text" placeholder="Enter Address" required>
+            <input id='city' type="text" placeholder="Enter Address" required="required" />
 
           </div>
 
@@ -64,7 +67,7 @@
               </div>
             </div>
 
-            <input id='postCode' type="text" placeholder="Enter Address" required>
+            <input id='postCode' type="text" placeholder="Enter Address" required="required" />
 
           </div>
 
@@ -78,7 +81,7 @@
               </div>
             </div>
 
-            <input id='phone' type="text" placeholder="Enter Phone Number" required>
+            <input id='phone' type="text" placeholder="Enter Phone Number" required="required" />
           </div>
 
 
@@ -90,28 +93,29 @@
           </div>
         </div>
 
-        <input id='userBio' type="text" placeholder="Describe yourself" required>
+        <input id='userBio' type="text" placeholder="Describe yourself" required="required" />
       </div>
 
           <div id="profilePic">
             <progress value="0" max="100" id="uploader">0%</progress>
-    <input type="file" value="upload" id="fileButton" />
-
+            <input type="file" value="upload" id="fileButton" />
           </div>
 
           <div id ="confirm">
-            <button id ="clicked">Confirm Details</button>
+            <input id="clicked" type="button" value="Confirm Details">
+          </div>
       </div>
 
     </form>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src = "../scripts/firebase.js"></script>
   <script src = "../scripts/createHelpee.js"></script>
-  <script src = "../About Us/assets/js/main.js"></script>
 </body>
 
 </html>
