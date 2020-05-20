@@ -9,6 +9,6 @@ function selectHelpee(){
         window.location.href = "createHelpee.html"
     })
 }
-//akgfasyurfgasdifgahil
+
 selectHelpee();
 selectHelper();
