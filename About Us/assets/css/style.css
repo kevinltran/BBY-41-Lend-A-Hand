@@ -466,83 +466,147 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
 .about #pic1{
 width: 100vw;
+padding: 5px;
 }
 .about #pic2{
   width: 100vw;
+  padding: 5px;
+
 }
 .about #pic3{
   width: 100vw;
+  padding: 5px;
+
 }
 .about #pic4{
   width: 100vw;
+  padding: 5px;
+
 }
 }
 
 @media (max-width: 990px) and (min-width: 768px)  {
   .about #pic1{
   width: 100vw;
+  padding: 5px;
+
   }
   .about #pic2{
     width: 100vw;
+    padding: 5px;
+
   }
   .about #pic3{
     width: 100vw;
+    padding: 5px;
+
   }
   .about #pic4{
     width: 100vw;
+    padding: 5px;
+
   }
   }
 
   @media (max-width: 1200px) and (min-width:990px) {
     .about #pic1{
     width: 100vw;
+    padding: 5px;
+
     }
     .about #pic2{
       width: 100vw;
       height: 338px;
+      padding: 5px;
+
     }
     .about #pic3{
       width: 100vw;
+      padding: 5px;
+
     }
     .about #pic4{
       width: 100vw;
       height: 300px;
+      padding: 5px;
+
     }
     }
 
     @media (max-width: 1366px) and (min-width: 1200px) {
       .about #pic1{
       width: 100vw;
+      padding: 5px;
+
       }
       .about #pic2{
         width: 100vw;
         height: 404px;
+        padding: 5px;
+
       }
       .about #pic3{
         width: 100vw;
+        padding: 5px;
+
       }
       .about #pic4{
         width: 100vw;
         height: 360px;
+        padding: 5px;
+
       }
       }
 
       @media (max-width: 1780px) and (min-width: 1366px) {
         .about #pic1{
         width: 100vw;
+        padding: 5px;
+
         }
         .about #pic2{
           width: 100vw;
           height: 404px;
+          padding: 5px;
+
         }
         .about #pic3{
           width: 100vw;
+          padding: 5px;
+
         }
         .about #pic4{
           width: 100vw;
           height: 360px;
+          padding: 5px;
+
         }
         }
+
+        @media (max-width: 2506px) and (min-width: 1780px) {
+          .about #pic1{
+          width: 100vw;
+          padding: 5px;
+
+          }
+          .about #pic2{
+            width: 100vw;
+            height: 404px;
+            padding: 5px;
+
+          }
+          .about #pic3{
+            width: 100vw;
+            padding: 5px;
+
+          }
+          .about #pic4{
+            width: 100vw;
+            height: 360px;
+            padding: 5px;
+
+          }
+          }
 
 
 /*--------------------------------------------------------------
