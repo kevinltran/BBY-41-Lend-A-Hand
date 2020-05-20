@@ -5,5 +5,9 @@ function refuseRequest(id) {
     db.collection("users").doc(user.uid).update({
       requests: firebase.firestore.FieldValue.arrayRemove(id)
     })
+    // alert and reload page
+    setTimeout(function () {
+      if (!alert('Request refused')) { window.location.reload(); }
+    }, 200);
   })
 }
