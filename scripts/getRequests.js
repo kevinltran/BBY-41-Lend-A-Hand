@@ -17,11 +17,20 @@ function getRequests() {
               if (person.id == req) {
                 let li = document.createElement("div");
                 li.innerHTML = person.data().name + "&nbsp;has requested to help!<br/>";
-                //comment this out when finished
-                li.innerHTML += '<br/>leon self-note: remember to add profile pictures here too once done<br/>'
-                //end of self note
-                li.innerHTML += "<button style='color: white; background-color: #34a8eb; border-radius: 13px; border-color: #34a8eb' onclick='acceptRequest(" + JSON.stringify(person.id) + ")'>Accept</button>";
-                li.innerHTML += "&emsp;<button style='color: white; background-color: #2a8dc7; border-radius: 13px; border-color: #2a8dc7' onclick='refuseRequest(" + JSON.stringify(person.id) + ")'>Refuse</button>";
+                //get person's picture
+                var storageRef = storage.ref();
+                db.collection("users").doc(person.id).get().then(function (snap) {
+                  storageRef.child('profile_pics/' + snap.data().image).getDownloadURL().then(function (url) {
+                    li.innerHTML += "<img src='" + url + "'/>"
+                  }).catch(function (error) {
+                    // Handle any errors
+                  });
+                })
+
+                setTimeout(function () {
+                  li.innerHTML += "<br/><button style='color: white; background-color: #34a8eb; border-radius: 13px; border-color: #34a8eb' onclick='acceptRequest(" + JSON.stringify(person.id) + ")'>Accept</button>";
+                  li.innerHTML += "&emsp;<button style='color: white; background-color: #2a8dc7; border-radius: 13px; border-color: #2a8dc7' onclick='refuseRequest(" + JSON.stringify(person.id) + ")'>Refuse</button>";
+                }, 800);
                 $(li).css("margin", "1em");
                 $(li).css("padding", "1em");
                 $(li).css("background-color", "#c5f8fa");
