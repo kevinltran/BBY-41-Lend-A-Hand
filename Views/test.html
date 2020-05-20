@@ -7,63 +7,53 @@
 </head>
 
 <body>
-    <progress value="0" max="100" id="uploader">0%</progress>
-    <input type="file" value="upload" id="fileButton" />
+<img id = "img">
 
 
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
     <script>
-        /**var firebaseConfig = {
-            apiKey: "AIzaSyAdQNsdN8jh2Tv1Ot0ADsbRqbzlUMYQXEU",
-            authDomain: "lend-a-hand-9861e.firebaseapp.com",
-            databaseURL: "https://lend-a-hand-9861e.firebaseio.com/",
-            projectId: "lend-a-hand-9861e",
-            storageBucket: "lend-a-hand-9861e.appspot.com",
-            messagingSenderId: "230477140946",
-            appId: "1:230477140946:web:f1c6cb4bb6ea0533416e0b"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);*/
+// Create a reference to the file we want to download
 
-        var uploader = document.getElementById("uploader");
-        var fileButton = document.getElementById("fileButton");
+var storageRef = storage.ref();
+var starsRef = storageRef.child('profile_pics/"orange.jpg');
 
-        fileButton.addEventListener('change', function (e) {
-            //get File
-            var file = e.target.files[0];
+// Get the download URL
+starsRef.getDownloadURL().then(function(url) {
+  // Insert url into an <img> tag to "download"
+document.getElementById("img").src = url;
 
-            // Create a storage ref
-            var storageRef = firebase.storage().ref('profile_pics/' + file.name);
+}).catch(function(error) {
 
-            //Upload File
-            var task = storageRef.put(file);
+  // A full list of error codes is available at
+  // https://firebase.google.com/docs/storage/web/handle-errors
+  switch (error.code) {
+    case 'storage/object-not-found':
+      // File doesn't exist
+      break;
 
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+      break;
 
-            // Update Bar
-            task.on('state_changed',
-                function progress(snapshot) {
-                    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    uploader.value = percentage;
-                }, 
-                
-                function error(err) {
+    case 'storage/canceled':
+      // User canceled the upload
+      break;
 
-                },
-               
-                function complete() {
+  
 
-                }
-
-            );
-
-        });
+    case 'storage/unknown':
+      // Unknown error occurred, inspect the server response
+      break;
+  }
+});
     </script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="../scripts/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src = "../scripts/firebase.js"></script>
 </body>
 
 
