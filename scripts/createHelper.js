@@ -4,7 +4,7 @@ let homeAddress;
 let city;
 let postCode;
 let bio;
-let pic;
+let imageRef;
 
 //Gets the values from the fields when the user clicks confirm.
 document.getElementById("clicked").onclick = function () {
@@ -14,18 +14,17 @@ document.getElementById("clicked").onclick = function () {
     phoneNumber = document.getElementById("phone").value;
     bio = document.getElementById("userBio").value;
 
+    console.log(imageRef);
     console.log(phoneNumber);
     console.log(homeAddress);
     console.log(city);
     console.log(postCode);
     console.log(bio);
-    write( phoneNumber, homeAddress, city, postCode, bio)
-
-
+    write(phoneNumber, homeAddress, city, postCode, imageRef);
 };
 
 // This function creates a new doc in our "Helper" collection in our Database.
-function write( phoneNumber, homeAddress, city, postCode) {
+function write(phoneNumber, homeAddress, city, postCode, imageRef) {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             db.collection("users").doc(user.uid).update({
@@ -34,7 +33,8 @@ function write( phoneNumber, homeAddress, city, postCode) {
                 city: city,
                 postalCode: postCode,
                 description: bio,
-                role: "helper"
+                role: "helper",
+                image: imageRef
             })
         }
     })
@@ -62,7 +62,7 @@ fileButton.addEventListener('change', function (e) {
   //Upload File
   var task = storageRef.put(file);
 
-
+  imageRef = file.name;
   // Update Bar
   task.on('state_changed',
       function progress(snapshot) {
@@ -75,7 +75,7 @@ fileButton.addEventListener('change', function (e) {
       },
      
       function complete() {
-
+          console.log("image saved in database");
       }
 
   );
