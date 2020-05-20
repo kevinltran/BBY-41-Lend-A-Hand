@@ -4,6 +4,7 @@ let homeAddress;
 let city;
 let postCode;
 let bio;
+let pic;
 
 //Gets the values from the fields when the user clicks confirm.
 document.getElementById("clicked").onclick = function () {
@@ -12,6 +13,7 @@ document.getElementById("clicked").onclick = function () {
     postCode = document.getElementById("postCode").value;
     phoneNumber = document.getElementById("phone").value;
     bio = document.getElementById("userBio").value;
+
     console.log(phoneNumber);
     console.log(homeAddress);
     console.log(city);
@@ -79,3 +81,5 @@ fileButton.addEventListener('change', function (e) {
   );
 
 });
+
+
