@@ -1,3 +1,6 @@
+#userInfo {
+  transform: translate(0, 70px);
+}
 body{
     background-color: lightblue;
     font-family: "Open Sans", sans-serif;
@@ -64,8 +67,6 @@ html {
 #editNumber{
   text-align: right;
 }
-
-
 
 
 
