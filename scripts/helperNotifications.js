@@ -22,27 +22,39 @@ function getNotifications() {
                   let ul = document.createElement("h4");
                   let div = document.createElement("div");
                   let button = document.createElement("p");
+                  let email = document.createElement("p");
 
                   // fill HTML elements with data
                   console.log(person.data().name);
                   h4.innerHTML = person.data().name;
 
-                  // delete next line when done
-                  h4.innerHTML += "<br/> leon self-note: add profile pic here";
-                  //end self-note
-
-                  p.innerHTML = "Location:<br/>" + person.data().address + "<br/>" + person.data().postalCode + "&nbsp;" + person.data().city;
-                  p2.innerHTML = "Phone Number:<br/>" + person.data().phone
-                  p3.innerHTML = "Email:<br/>" + person.data().email;
-                  ul.innerHTML = "<b>List items:</b><br/>";
-                  button.innerHTML = "<button style='color: white; background-color: #34a8eb; border-radius: 13px; border-color: #34a8eb' onclick='removeNotification(" + JSON.stringify(person.id) + ")'>Done</button>";
-                  person.data().list.forEach(function (item) {
-                    let li = document.createElement("li");
-                    li.innerHTML = item;
-                    ul.append(li);
+                  var storageRef = storage.ref();
+                  db.collection("users").doc(person.id).get().then(function (snap) {
+                    storageRef.child('profile_pics/' + snap.data().image).getDownloadURL().then(function (url) {
+                      h4.innerHTML += "<img src='" + url + "'/>"
+                    }).catch(function (error) {
+                      // Handle any errors
+                    });
                   })
 
+                  setTimeout(function () {
+                    p.innerHTML = "Location:<br/>" + person.data().address + "<br/>" + person.data().postalCode + "&nbsp;" + person.data().city;
+                    p2.innerHTML = "Phone Number:<br/>" + person.data().phone
+                    p3.innerHTML = "Email:";
+                    email.innerHTML = "" + person.data().email;
+                    ul.innerHTML = "<b>List items:</b><br/>";
+                    button.innerHTML = "<button style='color: white; background-color: #34a8eb; border-radius: 13px; border-color: #34a8eb' onclick='removeNotification(" + JSON.stringify(person.id) + ")'>Done</button>";
+                    person.data().list.forEach(function (item) {
+                      let li = document.createElement("li");
+                      li.innerHTML = item;
+                      ul.append(li);
+                    }, 800)
+                  })
+
+
                   // styling
+                  $(email).css("font-size", "2.5vmax");
+                  $(div).css("overflow-x", "scroll");
                   $(div).css("margin", "1em");
                   $(div).css("padding", "1em");
                   $(div).css("background-color", "#c5f8fa");
@@ -54,6 +66,7 @@ function getNotifications() {
                   div.append(p);
                   div.append(p2);
                   div.append(p3);
+                  div.append(email);
                   div.append(ul);
                   div.append(button);
                   bigdiv.append(div);
