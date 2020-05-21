@@ -12,6 +12,7 @@ function viewInfo(id, userId) {
         //display doc.data() in pop up div
         popup.innerHTML = "<h2>" + doc.data().name + "</h2><ul>";
         var storageRef = storage.ref();
+        //Get image from storage
         db.collection("users").doc(doc.id).get().then(function (snap) {
           storageRef.child('profile_pics/' + snap.data().image).getDownloadURL().then(function (url) {
             popup.innerHTML += "<img style='display: block; margin-left: auto; margin-right: auto' width='50%'src='" + url + "'/>"
