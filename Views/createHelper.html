@@ -19,23 +19,13 @@
 
       <div class="logo mr-auto">
         <h1 id = "title"><a href="/index.html">CONFIRM PROFILE DETAILS</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/header_logo.png" alt="" class="img-fluid"></a> -->
+
       </div>
 
-
+<!-- Creates a form for the user to inout thier information -->
   <div id='form'>
-
     <form>
-       <!-- <div id="fname">
-        <label for='name'>Confirm Full Name:</label>
-        <input id='name' type="text" placeholder="Enter Full Name" required="required" /></div>
-
-
-        <div id="emailAddress">
-          <label for='email'>Confirm Email:</label>
-          <input id='email' type="text" placeholder="Enter an email" required="required" /></div> -->
-
+          <!-- Address -->
           <div id="addressOuter">
             <div id="address"><label for='addressInput'>Address:</label>
               <div class="help-tip">
@@ -47,7 +37,7 @@
 
           </div>
 
-
+          <!-- City -->
           <div id="cityOuter">
             <div id="city1"><label for='city' required="required">City:</label>
               <div class="help-tip">
@@ -59,7 +49,7 @@
 
           </div>
 
-
+          <!-- Postal Code -->
           <div id="postalCodeOuter">
             <div id="postalCode"><label for='postCode'>Postal-Code:</label>
               <div class="help-tip">
@@ -72,7 +62,7 @@
           </div>
 
 
-
+          <!-- Phone Number -->
           <div id=numberOuter>
             <div id="number">
               <label for='phone'>Phone Number:</label>
@@ -85,7 +75,8 @@
           </div>
 
 
-      <div id=bioOuter>
+          <!-- Description Of themselves -->
+       <div id=bioOuter>
         <div id="bio">
           <label for='userBio'>Description:</label>
           <div class="help-tip">
@@ -96,6 +87,7 @@
         <input id='userBio' type="text" placeholder="Describe yourself" required="required" />
       </div>
 
+          <!-- Profile Picture -->
           <div id="profilePic">
             <label>Profile Picture:</label>
             <br>
@@ -103,6 +95,7 @@
             <input type="file" value="upload" id="fileButton" />
           </div>
 
+          <!-- Confirm Button -->
           <div id ="confirm">
             <input id="clicked" type="button" value="Confirm Details">
           </div>
@@ -110,6 +103,8 @@
 
     </form>
   </div>
+  
+  <!-- Firebase Scripts -->
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
@@ -117,6 +112,8 @@
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src = "../scripts/firebase.js"></script>
+
+  <!-- Main Scripts -->
   <script src = "../scripts/createHelper.js"></script>
 </body>
 
