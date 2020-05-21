@@ -1,3 +1,4 @@
+// gets and displays the helper's notifications
 function getNotifications() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {

@@ -1,3 +1,4 @@
+// handles the event in which helpee refuses a request
 function refuseRequest(id) {
   console.log("refused request");
   // delete request from database

@@ -1,9 +1,11 @@
+// Handles the confirm prompt when the user "accepts" requests
 function acceptRequest(id) {
   if (confirm("Accepting will share your profile information with this user. Continue?")) {
     accepted(id);
   }
 }
 
+// records the user's accept request to the database
 function accepted(id) {
   console.log("accepted request");
   firebase.auth().onAuthStateChanged(function (user) {

@@ -1,3 +1,4 @@
+// removes the notification when "Done" is clicked.
 function removeNotification(id) {
   if (confirm('Tapping "Done" will remove this person\'s information from your notifications. Continue?')) {
     console.log("removed notification");

@@ -1,3 +1,4 @@
+// Sends the request to help when Helper clicks "Request to help"
 function sendRequest(id, userId) {
   db.collection("users").get().then(function (xlist) {
     xlist.forEach(function (snap) {
