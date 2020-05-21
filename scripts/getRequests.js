@@ -1,8 +1,11 @@
+// gets and displays helpee user's requests
 function getRequests() {
   firebase.auth().onAuthStateChanged(function (user) {
     let list = $("<div></div>");
+
     // for each request the current user has..
     db.collection("users").doc(user.uid).get().then(function (snap) {
+
       //if no requests exist
       if (snap.data().requests.length == 0) {
         console.log("Working");
@@ -10,13 +13,16 @@ function getRequests() {
         list.append(msg);
       } else {
         snap.data().requests.forEach(function (req) {
+
           // compare id of requester to ids in database
           db.collection("users").get().then(function (ids) {
             ids.forEach(function (person) {
+
               // if ids match, return the name
               if (person.id == req) {
                 let li = document.createElement("div");
                 li.innerHTML = person.data().name + "&nbsp;has requested to help!<br/>";
+
                 //get person's picture
                 var storageRef = storage.ref();
                 db.collection("users").doc(person.id).get().then(function (snap) {
@@ -27,10 +33,12 @@ function getRequests() {
                   });
                 })
 
+                // display elements after picture is loaded
                 setTimeout(function () {
                   li.innerHTML += "<br/><button style='color: white; background-color: #34a8eb; border-radius: 13px; border-color: #34a8eb' onclick='acceptRequest(" + JSON.stringify(person.id) + ")'>Accept</button>";
                   li.innerHTML += "&emsp;<button style='color: white; background-color: #2a8dc7; border-radius: 13px; border-color: #2a8dc7' onclick='refuseRequest(" + JSON.stringify(person.id) + ")'>Refuse</button>";
                 }, 800);
+                // css styling
                 $(li).css("margin", "1em");
                 $(li).css("padding", "1em");
                 $(li).css("background-color", "#c5f8fa");
@@ -44,6 +52,7 @@ function getRequests() {
         });
       }
     })
+    // more css styling and rendering
     $(list).css("transform", "translate(0px, 70px)");
     $(list).css("text-align", "center");
     $(list).css("padding", "1em");
