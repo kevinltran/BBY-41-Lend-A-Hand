@@ -1,4 +1,9 @@
 let displaying = false;
+/**
+ * Used when clicked on the bootstrap card, shows the information
+ * about that person.
+ * Shows name, list and picture  
+ */ 
 function viewInfo(id, userId) {
   let popup = document.getElementById("popup");
   db.collection("users").get().then(function (xlist) {
@@ -7,6 +12,7 @@ function viewInfo(id, userId) {
         //display doc.data() in pop up div
         popup.innerHTML = "<h2>" + doc.data().name + "</h2><ul>";
         var storageRef = storage.ref();
+        //Get image from storage
         db.collection("users").doc(doc.id).get().then(function (snap) {
           storageRef.child('profile_pics/' + snap.data().image).getDownloadURL().then(function (url) {
             popup.innerHTML += "<img style='display: block; margin-left: auto; margin-right: auto' width='50%'src='" + url + "'/>"
@@ -34,6 +40,12 @@ function viewInfo(id, userId) {
       }
     })
   });
+
+  /**
+   * Done so clicking cards are not a 'toggle'
+   * Clicking a different card makes a new users info popup
+   * instead of removing the 'toggling' off the previous popup.
+   */
   if (popup.style.display === "none" && !displaying) {
     popup.style.display = "block";
     displaying = true;
