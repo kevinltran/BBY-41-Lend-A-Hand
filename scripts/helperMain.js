@@ -2,6 +2,10 @@ var map, infoWindow;
 var rad;
 let info = document.getElementById("info");
 
+/**
+ * Creates Google Maps on screen with the addition of
+ * Geolocation, Radius Circles, and Direction Services
+ */
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -12,14 +16,14 @@ function initMap() {
     });
     infoWindow = new google.maps.InfoWindow;
 
-    //Geolocation
+    /* Geolocation */
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-            //Pin or Marker
+            /* Pin or Marker */
             var marker = new google.maps.Marker({
                 position: pos,
                 map: map
@@ -29,7 +33,7 @@ function initMap() {
             infoWindow.open(map);
             map.setCenter(pos);
 
-            // Creates radius around marker.
+            /* Creates radius around marker */
             var circle = new google.maps.Circle({
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.8,
@@ -45,14 +49,19 @@ function initMap() {
                 rad = distance.value * 1000;
                 circle.setRadius(rad);
 
-                // clears the div of all child nodes;
-                // this is a common way of doing this
-                // taken from the internet (can be found in many places) stackoverflow, geeksforgeeks etc.
+                /** 
+                 * Clears the div of all child nodes;
+                 * This is a common way of doing this
+                 * Taken from the internet (can be found in many places) stackoverflow, geeksforgeeks etc.
+                 */
                 let cards = document.getElementsByClassName('row')[0];
                 while (cards.firstChild) {
                     cards.removeChild(cards.lastChild);
                 }
-                //Calcuates distance between helper and helpee
+
+
+                
+                /* Calculates distance between helper and helpee */
                 var directionsService = new google.maps.DirectionsService();
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
@@ -96,7 +105,11 @@ function initMap() {
 }
 
 
-// Dynamically creates bootstrap cards for each user in range.
+/**
+ * Dynamically creates bootstrap cards for each user in range.
+ * Cards include the person's Name and Biography.
+ * Clicking on the Card shows the person's Name, Picture and List of Items.
+ */
 function createCard(doc, user) {
     document.getElementById("help").innerHTML = "These people are in your area and need some help!";
     document.getElementById("moreInfo").innerHTML = "Click on the cards to see more info.";
